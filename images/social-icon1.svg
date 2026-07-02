@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="30" viewBox="0 0 32 30">
+  <g id="Group_40963" data-name="Group 40963" transform="translate(-635 -7140)">
+    <path id="facebook-icon" d="M14.421,0,11.828,0a4.555,4.555,0,0,0-4.8,4.922V7.191H4.423a.408.408,0,0,0-.408.408v3.288a.408.408,0,0,0,.408.408H7.031v8.3A.408.408,0,0,0,7.439,20h3.4a.408.408,0,0,0,.408-.408V11.3H14.3a.408.408,0,0,0,.408-.408V7.6a.408.408,0,0,0-.408-.408h-3.05V5.268c0-.925.22-1.394,1.425-1.394h1.747a.408.408,0,0,0,.408-.408V.412A.408.408,0,0,0,14.421,0Z" transform="translate(641.984 7145)" fill="#fff"/>
+    <g id="Rectangle_8472" data-name="Rectangle 8472" transform="translate(635 7140)" fill="none" stroke="#707070" stroke-width="1">
+      <rect width="32" height="30" rx="2" stroke="none"/>
+      <rect x="0.5" y="0.5" width="31" height="29" rx="1.5" fill="none"/>
+    </g>
+  </g>
+</svg>

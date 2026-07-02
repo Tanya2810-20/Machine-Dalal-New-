@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="30" viewBox="0 0 32 30">
+  <g id="Group_40964" data-name="Group 40964" transform="translate(-675 -7140)">
+    <path id="instagram-icon" d="M14.028.9H5.773A4.878,4.878,0,0,0,.9,5.773v8.255A4.878,4.878,0,0,0,5.773,18.9h8.255A4.878,4.878,0,0,0,18.9,14.028V5.773A4.878,4.878,0,0,0,14.028.9ZM9.9,14.822A4.921,4.921,0,1,1,14.822,9.9,4.921,4.921,0,0,1,9.9,14.822ZM14.94,6.14a1.454,1.454,0,1,1,1.454-1.454A1.454,1.454,0,0,1,14.94,6.14Z" transform="translate(681.1 7145.1)" fill="#fff"/>
+    <g id="Rectangle_8473" data-name="Rectangle 8473" transform="translate(675 7140)" fill="none" stroke="#707070" stroke-width="1">
+      <rect width="32" height="30" rx="2" stroke="none"/>
+      <rect x="0.5" y="0.5" width="31" height="29" rx="1.5" fill="none"/>
+    </g>
+  </g>
+</svg>

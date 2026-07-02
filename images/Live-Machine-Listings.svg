@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="225" height="194.5" viewBox="0 0 225 194.5">
+  <g id="Group_42138" data-name="Group 42138" transform="translate(-998.5 -1180)">
+    <line id="Line_569" data-name="Line 569" x2="225" transform="translate(998.5 1373.5)" fill="none" stroke="#b5b5b5" stroke-width="2"/>
+    <g id="Group_42107" data-name="Group 42107" transform="translate(0 -464)">
+      <g id="Rectangle_10389" data-name="Rectangle 10389" transform="translate(1148 1644)" fill="#e3e3e3" stroke="#d6d6d6" stroke-width="1">
+        <rect width="75" height="193" stroke="none"/>
+        <rect x="0.5" y="0.5" width="74" height="192" fill="none"/>
+      </g>
+      <line id="Line_570" data-name="Line 570" x2="74.5" transform="translate(1148.5 1798.5)" fill="none" stroke="#b5b5b5" stroke-width="1" stroke-dasharray="3"/>
+      <line id="Line_571" data-name="Line 571" x2="74.5" transform="translate(1148.5 1759.5)" fill="none" stroke="#b5b5b5" stroke-width="1" stroke-dasharray="3"/>
+      <line id="Line_572" data-name="Line 572" x2="74.5" transform="translate(1148.5 1721.5)" fill="none" stroke="#b5b5b5" stroke-width="1" stroke-dasharray="3"/>
+      <line id="Line_573" data-name="Line 573" x2="74.5" transform="translate(1148 1682.5)" fill="none" stroke="#b5b5b5" stroke-width="1" stroke-dasharray="3"/>
+    </g>
+  </g>
+</svg>

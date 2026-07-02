@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+  <g id="Share" transform="translate(9.857 0.466)">
+    <g id="Rectangle_5797" data-name="Rectangle 5797" transform="translate(-9.857 -0.466)" fill="#f2f2f2" stroke="#ededed" stroke-width="1">
+      <rect width="36" height="36" rx="1" stroke="none"/>
+      <rect x="0.5" y="0.5" width="35" height="35" rx="0.5" fill="none"/>
+    </g>
+    <g id="Group_35897" data-name="Group 35897" transform="translate(1.294 10.828)">
+      <path id="Share-2" data-name="Share" d="M148.884,72.513l-4.672,2.79a2.185,2.185,0,1,0,.016,1.727l4.66,2.784a2.188,2.188,0,1,0,.611-.908L144.9,76.162l4.584-2.738a2.182,2.182,0,1,0-.6-.912Zm2.065,6.934a1.092,1.092,0,1,1-1.092,1.092A1.093,1.093,0,0,1,150.949,79.447Zm-8.736-4.354a1.092,1.092,0,1,1-1.092,1.092A1.093,1.093,0,0,1,142.214,75.094Zm8.736-4.384a1.092,1.092,0,1,1-1.092,1.092A1.093,1.093,0,0,1,150.949,70.709Z" transform="translate(-140.029 -69.617)" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>

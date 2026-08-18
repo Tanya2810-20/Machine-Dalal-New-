@@ -1,0 +1,2236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Machine Video Gallery — Machine Dalal</title>
+  <!-- FontAwesome or your existing design system icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="gallery.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="icon" type="image/ico" href="images/favicon.ico" alt="Machinedalal-Logo" />
+  <link rel="preload, stylesheet" as="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="preload, stylesheet" as="stylesheet" type="text/css" href="css/style.css">
+  <link rel="preload, stylesheet" as="stylesheet" type="text/css" href="css/responsive.css">
+</head>
+
+<style>
+  :root {
+    --md-yellow: #FFDE4D;
+    --md-charcoal: #222222;
+    --md-text-dark: #1A1A1A;
+    --md-text-muted: #666666;
+    --md-bg-light: #F9FAFB;
+    --md-white: #FFFFFF;
+    --md-border-color: #E5E7EB;
+
+    --md-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --md-radius: 8px;
+    --md-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+    --md-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --md-shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+    --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: var(--md-font-sans);
+    background-color: var(--md-bg-light);
+    color: var(--md-text-dark);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .md-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  .md-header-top {
+    background-color: var(--md-yellow);
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .md-brand-group {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .md-logo {
+    text-decoration: none;
+    color: var(--md-charcoal);
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+
+  .md-nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .nav-item,
+  .nav-link {
+    color: var(--md-charcoal);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .md-user-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .icon-btn {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    color: var(--md-charcoal);
+    cursor: pointer;
+  }
+
+  .seller-portal-btn {
+    background-color: var(--md-charcoal);
+    color: var(--md-white);
+    padding: 8px 16px;
+    border-radius: var(--md-radius);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+  }
+
+  .md-hero-section {
+    background-color: var(--md-white);
+    padding: 40px 0 24px 0;
+    border-bottom: 1px solid var(--md-border-color);
+  }
+
+  .md-breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--md-text-muted);
+    margin-bottom: 16px;
+  }
+
+  .md-breadcrumbs a {
+    color: var(--md-text-muted);
+    text-decoration: none;
+  }
+
+  .md-breadcrumbs .separator {
+    color: #CCC;
+  }
+
+  .md-breadcrumbs .current {
+    color: var(--md-text-dark);
+    font-weight: 500;
+  }
+
+  .md-page-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--md-charcoal);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+
+  .md-page-subtitle {
+    font-size: 15px;
+    color: var(--md-text-muted);
+  }
+
+  .md-gallery-wrapper {
+    margin-top: 32px;
+    margin-bottom: 80px;
+  }
+
+  .md-filters-bar {
+    background-color: var(--md-white);
+    border-radius: var(--md-radius);
+    padding: 16px;
+    border: 1px solid var(--md-border-color);
+    box-shadow: var(--md-shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .search-box-wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  .search-box-wrapper .search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--md-text-muted);
+  }
+
+  .search-box-wrapper input {
+    width: 100%;
+    padding: 12px 12px 12px 42px;
+    border-radius: var(--md-radius);
+    border: 1px solid var(--md-border-color);
+    font-size: 14px;
+    outline: none;
+    transition: var(--transition-smooth);
+  }
+
+  .search-box-wrapper input:focus {
+    border-color: var(--md-charcoal);
+  }
+
+  .filters-dropdown-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    align-items: center;
+  }
+
+  .select-wrapper select {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: var(--md-radius);
+    border: 1px solid var(--md-border-color);
+    background-color: var(--md-white);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--md-text-dark);
+    outline: none;
+    cursor: pointer;
+  }
+
+  .btn-clear-filters {
+    background: transparent;
+    border: 1px dashed var(--md-border-color);
+    padding: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: var(--md-radius);
+    cursor: pointer;
+    color: var(--md-text-muted);
+    transition: var(--transition-smooth);
+  }
+
+  .btn-clear-filters:hover {
+    background-color: #FFF5F5;
+    color: #DC2626;
+    border-color: #FCA5A5;
+  }
+
+  .md-gallery-grid {
+    display: grid;
+    gap: 24px;
+  }
+
+  .reel-card {
+    background-color: var(--md-white);
+    border-radius: var(--md-radius);
+    overflow: hidden;
+    border: 1px solid var(--md-border-color);
+    box-shadow: var(--md-shadow-sm);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+  }
+
+  .reel-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--md-shadow-md);
+  }
+
+  .reel-thumbnail-container {
+    position: relative;
+    width: 100%;
+    padding-top: 87.77%;
+    background-color: var(--md-charcoal);
+    overflow: hidden;
+  }
+
+  .reel-thumbnail-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .reel-card:hover .reel-thumbnail-container img {
+    transform: scale(1.04);
+  }
+
+  .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.4) 100%);
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+  }
+
+  .reel-card:hover .card-overlay {
+    opacity: 1;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%);
+  }
+
+  .play-animated-icon {
+    width: 54px;
+    height: 54px;
+    background-color: rgba(255, 222, 77, 0.95);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--md-charcoal);
+    font-size: 18px;
+    transform: scale(0.8);
+    transition: var(--transition-smooth);
+  }
+
+  .reel-card:hover .play-animated-icon {
+    transform: scale(1);
+  }
+
+  .badge {
+    position: absolute;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--md-white);
+  }
+
+  .duration-badge {
+    top: 12px;
+    right: 12px;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+  }
+
+  .category-badge {
+    bottom: 12px;
+    left: 12px;
+    background-color: var(--md-charcoal);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .reel-card-details {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .machine-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--md-text-dark);
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .machine-metadata {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 12px;
+  }
+
+  .meta-item {
+    font-size: 13px;
+    color: var(--md-text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .card-engagement-footer {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid var(--md-border-color);
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--md-text-muted);
+    font-weight: 500;
+  }
+
+  @media (min-width: 1200px) {
+    .md-gallery-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media (max-width: 1199px) and (min-width: 992px) {
+    .md-gallery-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 991px) and (min-width: 576px) {
+    .md-gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 575px) and (min-width: 400px) {
+    .md-gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+  }
+
+  @media (max-width: 399px) {
+    .md-gallery-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  .md-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-backdrop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 10, 10, 0.9);
+    backdrop-filter: blur(8px);
+  }
+
+  .modal-container-layout {
+    position: relative;
+    width: 100%;
+    max-width: 1040px;
+    height: 85vh;
+    background-color: var(--md-white);
+    border-radius: 12px;
+    overflow: hidden;
+    z-index: 2002;
+    display: flex;
+    box-shadow: var(--md-shadow-lg);
+  }
+
+  .modal-close-global {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: var(--md-text-dark);
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .modal-main-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  .video-player-canvas {
+    flex: 1.2;
+    background-color: #000;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .video-player-canvas video {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .video-hud-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.4) 100%);
+    pointer-events: none;
+  }
+
+  .hud-btn {
+    pointer-events: auto;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .hud-center-play {
+    pointer-events: auto;
+    align-self: center;
+    color: white;
+    font-size: 40px;
+    opacity: 0;
+    transition: var(--transition-smooth);
+    cursor: pointer;
+  }
+
+  .video-player-canvas:hover .hud-center-play {
+    opacity: 0.8;
+  }
+
+  .hud-bottom-timeline {
+    width: 100%;
+    pointer-events: auto;
+  }
+
+  .progress-bar-container {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    border-radius: 2px;
+    position: relative;
+  }
+
+  .progress-filled {
+    width: 0%;
+    height: 100%;
+    background-color: var(--md-yellow);
+    border-radius: 2px;
+  }
+
+  .video-sidebar-specs {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    border-left: 1px solid var(--md-border-color);
+    overflow-y: auto;
+  }
+
+  .badge-accented-category {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--md-text-muted);
+    letter-spacing: 1px;
+  }
+
+  .sidebar-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 4px 0 8px 0;
+    color: var(--md-charcoal);
+  }
+
+  .sidebar-vendor-location {
+    font-size: 13px;
+    color: var(--md-text-muted);
+    margin-bottom: 24px;
+  }
+
+  .specs-data-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    background-color: var(--md-bg-light);
+    padding: 16px;
+    border-radius: var(--md-radius);
+    margin-bottom: 24px;
+  }
+
+  .spec-cell {
+    font-size: 14px;
+  }
+
+  .sidebar-engagement-actions {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .action-trigger {
+    flex: 1;
+    background: transparent;
+    border: 1px solid var(--md-border-color);
+    padding: 10px;
+    border-radius: var(--md-radius);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+  }
+
+  .action-trigger:hover {
+    background-color: var(--md-bg-light);
+    border-color: var(--md-charcoal);
+  }
+
+  .md-btn-primary {
+    background-color: var(--md-charcoal);
+    color: var(--md-white);
+    border: none;
+    padding: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: var(--md-radius);
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+  }
+
+  .md-btn-primary:hover {
+    background-color: #000;
+  }
+
+  .full-width-btn {
+    display: block;
+    width: 100%;
+  }
+
+  .related-reels-section {
+    margin-top: auto;
+    padding-top: 24px;
+    border-top: 1px solid var(--md-border-color);
+  }
+
+  .related-reels-section h4 {
+    font-size: 13px;
+    color: var(--md-text-muted);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .related-mini-card {
+    display: flex;
+    gap: 12px;
+    cursor: pointer;
+    align-items: center;
+  }
+
+  .related-mini-card img {
+    width: 50px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  .mini-card-text .title {
+    font-size: 13px;
+    font-weight: 600;
+    display: block;
+  }
+
+  .mini-card-text .meta {
+    font-size: 12px;
+    color: var(--md-text-muted);
+  }
+
+  .nav-carousel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    background-color: var(--md-white);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--md-shadow-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-prev {
+    left: -60px;
+  }
+
+  .nav-next {
+    right: -60px;
+  }
+
+  @media (max-width: 1160px) {
+    .nav-prev {
+      left: 12px;
+    }
+
+    .nav-next {
+      right: 12px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .modal-container-layout {
+      flex-direction: column;
+      height: 95vh;
+      width: 95%;
+    }
+
+    .modal-main-content {
+      flex-direction: column;
+    }
+
+    .video-player-canvas {
+      flex: 1;
+    }
+
+    .video-sidebar-specs {
+      flex: 1;
+      padding: 16px;
+    }
+
+    .nav-carousel {
+      display: none;
+    }
+  }
+
+  .md-empty-state {
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .empty-icon-wrapper {
+    font-size: 48px;
+    color: #9CA3AF;
+    margin-bottom: 16px;
+  }
+
+  .skeleton-card {
+    background: linear-gradient(90deg, #F3F4F6 25%, #E5E7EB 50%, #F3F4F6 75%);
+    background-size: 200% 100%;
+    animation: loadingSkeleton 1.5s infinite;
+    border-radius: var(--md-radius);
+  }
+
+  @keyframes loadingSkeleton {
+    0% {
+      background-position: 200% 0;
+    }
+
+    100% {
+      background-position: -200% 0;
+    }
+  }
+</style>
+
+<body>
+
+  <header class="top_header">
+    <div class="lang_head0">
+      <div class="lang_head">
+        <div class="container">
+
+          <div class="small_header">
+
+            <div>
+              <button type="button" class="sell_btn">Seller Portal</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <header class="sec_header">
+    <div class="header_machineD">
+      <div class="container">
+        <div class="header_content" itemscope="" itemtype="https://schema.org/WebSite">
+          <div class="header_mach_logo_sec">
+            <div class="header_mach_logo">
+              <div class="logo">
+                <a itemprop="url" href="index.html" class="md-logo">
+                  <img itemprop="logo" src="images/md-logo-new.svg" alt="Machine Dalal logo Image" />
+                </a>
+                <a itemprop="url" href="index.html" class="md-logo-scroll">
+                  <img itemprop="logo" src="images/md-logo-Black-ico.svg" alt="Machine Dalal logo Image" />
+                </a>
+              </div>
+              <div class="header_mach_txt">
+                <ul class="header_mach_subtxt">
+                  <li>
+                    <p data-menu="products" class="products">
+                      Machinery
+                      <span class="arrow_icon"><img src="images/arrow-down.svg" alt="arrow icon"></span>
+
+                    </p>
+                  </li>
+
+                  <li>
+                    <p data-menu="brands" onclick="window.location.href = 'brands.html';">
+                      Brands
+                    </p>
+                  </li>
+
+                  <li>
+                    <p data-menu="concierge">
+                      Concierge
+                    </p>
+                  </li>
+
+                  <li>
+                    <p data-menu="liquidation">
+                      Liquidation
+                    </p>
+                  </li>
+
+                  <li>
+                    <p data-menu="plans">
+                      Plans
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="headerSearch">
+              <div class="search-wrap">
+                <div class="search-row">
+                  <span class="search-ico">
+                    <img src="images/search.svg" alt="search">
+                  </span>
+                  <span class="trending-ico">
+                    <img src="images/west.svg" alt="search">
+                  </span>
+                  <div class="search-input-wrap">
+                    <input class="search-input" type="text" id="heroSearch"
+                      placeholder="Search machines, brands, models or factories..." autocomplete="off">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="md_login_notify">
+              <div class="md_profile">
+                <span class="location-ico">
+                  <img src="images/notifyy-2.svg" alt="notifications">
+                </span>
+                <span class="profile-ico">
+                  <img src="images/login-2.svg" alt="profile">
+                  <div class="profile_info_drop">
+                    <div class="profile_info_head">
+                      <div class="profile_login_ico">
+                        <img src="images/avtar-2.svg" alt="avatar">
+                      </div>
+                      <div class="profile_info_name">
+                        <p class="profile_name">Maria Wilson</p>
+                        <p class="profile_email">company@gmail.com</p>
+                      </div>
+                    </div>
+                    <div class="profile_info_body">
+                      <ul class="profile_info_list">
+                        <li>
+                          <a href="#" class="profile_info_link">
+                            <img src="images/person.svg" alt="account">
+                            <p>Account</p>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="profile_info_link">
+                            <img src="images/mssg.svg" alt="account">
+                            <p>Conversations</p>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="profile_info_link">
+                            <img src="images/agent.svg" alt="account">
+                            <p>Contact Us</p>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="profile_info_link">
+                            <img src="images/notify-2.svg" alt="account">
+                            <p>Notifications</p>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="profile_info_footer">
+                      <ul class="profile_info_list">
+                        <li>
+                          <a href="#" class="profile_info_link">
+                            <img src="images/log-out.svg" alt="account">
+                            <p>Sign Out</p>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </span>
+              </div>
+
+            </div>
+
+            <div class="md_hamburger_sec">
+              <button class="hamburger" type="button" aria-label="Toggle navigation menu" aria-expanded="false"
+                aria-controls="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+
+              <div class="md_profile_mob">
+                <span class="profile-ico">
+                  <img src="images/login-2.svg" alt="profile">
+                </span>
+                <span class="noti_count">
+                  10
+                </span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <nav class="mobile-menu mobile_nav_menu" id="mobile-menu" aria-label="Mobile navigation" aria-hidden="true">
+          <div class="container">
+            <ul class="mobile-menu__list" role="list">
+              <li>
+                <span class="mobile-menu__link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                  aria-controls="offcanvasRight">
+                  <p class="mobile-menu__link_txt">Machinery</p>
+                  <span class="arrow_icon"><img src="images/arrow-right.svg" alt="arrow icon"></span>
+                </span>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                  aria-labelledby="offcanvasRightLabel1">
+                  <div class="offcanvas-header">
+                    <div class="container">
+                      <h5 class="text-reset" id="offcanvasRightLabel1" data-bs-dismiss="offcanvas" aria-label="Close">
+                        <img src="images/arrow-left-2.svg" alt="back">Main Menu
+                      </h5>
+                    </div>
+                  </div>
+                  <div class="offcanvas-body">
+
+                    <div class="mob_menu_right">
+                      <div class="container">
+                        <div class="mobile_menu_sublist_sec">
+                          <div class="header_menu_new_subsec_moblist">
+                            <ul class="header_menu_new_subsec_list_ul">
+                              <li>
+                                <div class="header_menu_list1">
+                                  <div class="header_menu_list11">
+
+                                    <a href="#">Sheet Fed / Offset <span>(1302)</span></a>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="header_menu_list1 header_menu_list2">
+                                  <div class="header_menu_list11">
+
+                                    <a href="#">Pre Press <span>(35)</span></a>
+                                  </div>
+                                  <ul class="subcategory_list">
+                                    <li>
+                                      <p>CTP Systems (25)</p>
+                                    </li>
+                                    <li>
+                                      <p>Plate Processors (5)</p>
+                                    </li>
+                                    <li>
+                                      <p>Plate Punchers / Benders (1)</p>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="header_menu_list1 header_menu_list2">
+                                  <div class="header_menu_list11">
+
+                                    <a href="#">Post Press <span>(880)</span></a>
+                                  </div>
+                                  <ul class="subcategory_list">
+                                    <li>
+                                      <p>Accessories (26)</p>
+                                    </li>
+                                    <li>
+                                      <p>Book Production (15)</p>
+                                    </li>
+                                    <li>
+                                      <p>Calendar Production (7)</p>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="header_menu_list1 header_menu_list2">
+                                  <div class="header_menu_list11">
+
+                                    <a href="#">Converting <span>(82)</span></a>
+                                  </div>
+                                  <ul class="subcategory_list">
+                                    <li>
+                                      <p>Bag Making (13)</p>
+                                    </li>
+                                    <li>
+                                      <p>Converting Machines (1)</p>
+                                    </li>
+                                    <li>
+                                      <p>Flexographic Equipment (36)</p>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="header_menu_list1 header_menu_list2">
+                                  <div class="header_menu_list11">
+
+                                    <a href="#">Web <span>(25)</span></a>
+                                  </div>
+                                  <ul class="subcategory_list">
+                                    <li>
+                                      <p>Flexo (3)</p>
+                                    </li>
+                                    <li>
+                                      <p>Gravure / Rotogravure (9)</p>
+                                    </li>
+                                    <li>
+                                      <p>Labels and Forms (1)</p>
+                                    </li>
+                                    <li>
+                                      <p>Commercial / Heatset (9)</p>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="offcanvas-footer">
+                    <div class="header_menu_new_subsec_2">
+                      <div class="container">
+                        <div class="header_menu_new_subsec_2_inner">
+                          <div class="header_menu_new_subsec_2_inner1">
+                            <div class="header_menu_new_subsec_2_inner11">
+                              <span>
+                                <img src="images/global-2.svg" alt="Global Logistics">
+                              </span>
+                              <div class="header_menu_new_subsec_2_inner11_text">
+                                <h4>Global Logistics</h4>
+                                <p>Real-time shipping quotes worldwide.</p>
+                              </div>
+                            </div>
+                            <div class="header_menu_new_subsec_2_inner11 header_menu_new_subsec_2_inner12">
+                              <span>
+                                <img src="images/flexible.svg" alt="Flexible Financing">
+                              </span>
+                              <div class="header_menu_new_subsec_2_inner11_text">
+                                <h4>Flexible Financing</h4>
+                                <p>Secure asset-backed lending options.</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="explore_inven">
+                            <button type="button" class="explore_inven_btn"
+                              onclick="window.location.href = 'list.html';">
+                              EXPLORE
+                              <span class="material-symbols-outlined">
+                                trending_flat
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+
+              </li>
+              <li><a href="brands.html" class="mobile-menu__link">Brands</a></li>
+              <li><a href="#" class="mobile-menu__link">Concierge</a></li>
+              <li><a href="#" class="mobile-menu__link">Liquidation</a></li>
+              <li><a href="#" class="mobile-menu__link">Plans</a></li>
+
+
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <!--============ On Click Menu START ============-->
+
+
+
+
+      <div class="header_menu_new">
+
+        <div class="header_menu_content active_menu" data-content="products">
+          <div class="header_menu_new_inner">
+            <div class="header_menu_new_subsec_1">
+              <div class="header_menu_new_subsec_list">
+                <ul class="header_menu_new_subsec_list_ul">
+                  <li>
+                    <div class="header_menu_list1">
+                      <div class="header_menu_list11">
+
+                        <a href="#">Sheet Fed / Offset <span>(1302)</span></a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="header_menu_list1 header_menu_list2">
+                      <div class="header_menu_list11">
+
+                        <a href="#">Pre Press <span>(35)</span></a>
+                      </div>
+                      <ul class="subcategory_list">
+                        <li>
+                          <p>CTP Systems (25)</p>
+                        </li>
+                        <li>
+                          <p>Plate Processors (5)</p>
+                        </li>
+                        <li>
+                          <p>Plate Punchers / Benders (1)</p>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="header_menu_list1 header_menu_list2">
+                      <div class="header_menu_list11">
+
+                        <a href="#">Post Press <span>(880)</span></a>
+                      </div>
+                      <ul class="subcategory_list">
+                        <li>
+                          <p>Accessories (26)</p>
+                        </li>
+                        <li>
+                          <p>Book Production (15)</p>
+                        </li>
+                        <li>
+                          <p>Calendar Production (7)</p>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="header_menu_list1 header_menu_list2">
+                      <div class="header_menu_list11">
+
+                        <a href="#">Converting <span>(82)</span></a>
+                      </div>
+                      <ul class="subcategory_list">
+                        <li>
+                          <p>Bag Making (13)</p>
+                        </li>
+                        <li>
+                          <p>Converting Machines (1)</p>
+                        </li>
+                        <li>
+                          <p>Flexographic Equipment (36)</p>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="header_menu_list1 header_menu_list2">
+                      <div class="header_menu_list11">
+
+                        <a href="#">Web <span>(25)</span></a>
+                      </div>
+                      <ul class="subcategory_list">
+                        <li>
+                          <p>Flexo (3)</p>
+                        </li>
+                        <li>
+                          <p>Gravure / Rotogravure (9)</p>
+                        </li>
+                        <li>
+                          <p>Labels and Forms (1)</p>
+                        </li>
+                        <li>
+                          <p>Commercial / Heatset (9)</p>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="header_menu_new_card_list">
+                <div class="header_menu_new_card1">
+                  <div class="header_menu_new_card1_tag">
+                    <p><span>FEATURED TODAY</span></p>
+                  </div>
+                  <div class="header_menu_new_card1_text">
+                    <p class="header_menu_new_card1_text1">
+                      Caterpillar 320 GC Excavator
+                    </p>
+                    <p class="header_menu_new_card1_text2">
+                      Optimized for productivity and fuel efficiency.
+                    </p>
+                  </div>
+                </div>
+                <div class="header_menu_new_card1">
+                  <div class="header_menu_new_card1_tag">
+                    <p><span>FEATURED TODAY</span></p>
+                  </div>
+                  <div class="header_menu_new_card1_text">
+                    <p class="header_menu_new_card1_text1">
+                      Komori Lithrone G40
+                    </p>
+                    <p class="header_menu_new_card1_text2">
+                      High-performance offset printing machine.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="header_menu_new_subsec_2">
+              <div class="header_menu_new_subsec_2_inner">
+                <div class="header_menu_new_subsec_2_inner1">
+                  <div class="header_menu_new_subsec_2_inner11">
+                    <span>
+                      <img src="images/global-2.svg" alt="Global Logistics">
+                    </span>
+                    <div class="header_menu_new_subsec_2_inner11_text">
+                      <h4>Global Logistics</h4>
+                      <p>Real-time shipping quotes worldwide.</p>
+                    </div>
+                  </div>
+                  <div class="header_menu_new_subsec_2_inner11 header_menu_new_subsec_2_inner12">
+                    <span>
+                      <img src="images/flexible.svg" alt="Flexible Financing">
+                    </span>
+                    <div class="header_menu_new_subsec_2_inner11_text">
+                      <h4>Flexible Financing</h4>
+                      <p>Secure asset-backed lending options.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="explore_inven">
+                  <button type="button" class="explore_inven_btn" onclick="window.location.href = 'list.html';">
+                    EXPLORE FULL INVENTORY
+                    <span class="material-symbols-outlined">
+                      trending_flat
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </header>
+
+  <section class="md-hero-section">
+    <div class="md-container">
+      <nav class="md-breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="separator">/</span>
+        <span class="current" aria-current="page">Machine Gallery & Reels</span>
+      </nav>
+      <h1 class="md-page-title">Industrial Machinery Video Gallery</h1>
+      <p class="md-page-subtitle">Watch high-definition operations, inspections, and live demos of certified global
+        inventory.</p>
+    </div>
+  </section>
+
+  <main class="md-container md-gallery-wrapper">
+
+    <section class="md-filters-bar" aria-label="Gallery Filters">
+      <div class="search-box-wrapper">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="gallerySearch" placeholder="Search machines, brands, models...">
+      </div>
+
+      <div class="filters-dropdown-grid">
+        <div class="select-wrapper">
+          <select id="filterCategory" aria-label="Category">
+            <option value="">All Categories</option>
+            <option value="sheetfed">Sheetfed/Offset</option>
+            <option value="die-cutting">Die Cutting</option>
+            <option value="folding">Folding Machine</option>
+            <option value="guillotines">Guillotines</option>
+          </select>
+        </div>
+
+        <div class="select-wrapper">
+          <select id="filterBrand" aria-label="Brand">
+            <option value="">All Brands</option>
+            <option value="heidelberg">Heidelberg</option>
+            <option value="komori">Komori</option>
+            <option value="bobst">Bobst</option>
+          </select>
+        </div>
+
+        <div class="select-wrapper">
+          <select id="filterCountry" aria-label="Country">
+            <option value="">All Countries</option>
+            <option value="usa">United States</option>
+            <option value="germany">Germany</option>
+            <option value="india">India</option>
+          </select>
+        </div>
+
+        <div class="select-wrapper">
+          <select id="filterYear" aria-label="Year">
+            <option value="">All Years</option>
+            <option value="2020">2020+</option>
+            <option value="2010">2010 - 2019</option>
+            <option value="2000">Pre-2010</option>
+          </select>
+        </div>
+
+        <div class="select-wrapper">
+          <select id="filterSort" aria-label="Sort By">
+            <option value="newest">Newest</option>
+            <option value="viewed">Most Viewed</option>
+            <option value="recent">Recently Added</option>
+          </select>
+        </div>
+
+        <button id="btnClearFilters" class="btn-clear-filters"><i class="fa-solid fa-arrow-rotate-left"></i> Clear
+          Filters</button>
+      </div>
+    </section>
+
+    <section id="gallerySkeleton" class="md-gallery-grid hidden">
+      <div class="skeleton-card length-9-16"></div>
+      <div class="skeleton-card length-9-16"></div>
+      <div class="skeleton-card length-9-16"></div>
+      <div class="skeleton-card length-9-16"></div>
+    </section>
+
+    <section id="galleryEmptyState" class="md-empty-state hidden">
+      <div class="empty-icon-wrapper">
+        <i class="fa-solid fa-video-slash"></i>
+      </div>
+      <h2>No Reels Found</h2>
+      <p>We couldn't find any video matches matching your exact criteria. Try removing filters or changing your
+        keywords.</p>
+      <button onclick="resetAllFilters()" class="md-btn-primary">Reset Filter Criteria</button>
+    </section>
+
+    <section id="galleryGrid" class="md-gallery-grid">
+
+      <article class="reel-card" data-id="1" data-category="sheetfed" data-brand="heidelberg" data-country="usa"
+        data-year="2004" data-views="14200" data-date="2026-07-01">
+        <div class="reel-thumbnail-container">
+          <img data-src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&q=80&w=600"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 16'%3E%3C/svg%3E"
+            class="lazy-thumb" alt="Heidelberg 75-7+LX UV Video Machine Demonstration">
+          <div class="card-overlay">
+            <div class="play-animated-icon"><i class="fa-solid fa-play"></i></div>
+          </div>
+          <span class="badge duration-badge">0:45</span>
+          <span class="badge category-badge">Sheetfed / Offset</span>
+        </div>
+        <div class="reel-card-details">
+          <h3 class="machine-title">Heidelberg 75-7+LX -F-Size UV</h3>
+          <div class="machine-metadata">
+            <span class="meta-item"><i class="fa-solid fa-industry"></i> Heidelberg</span>
+            <span class="meta-item"><i class="fa-solid fa-location-dot"></i> Chicago, IL, USA</span>
+          </div>
+          <div class="card-engagement-footer">
+            <span class="engagement-metric"><i class="fa-regular fa-eye"></i> 14.2K views</span>
+            <span class="engagement-metric"><i class="fa-regular fa-heart"></i> 348</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reel-card" data-id="2" data-category="die-cutting" data-brand="bobst" data-country="germany"
+        data-year="2015" data-views="8900" data-date="2026-07-05">
+        <div class="reel-thumbnail-container">
+          <img data-src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 16'%3E%3C/svg%3E"
+            class="lazy-thumb" alt="Bobst Autoplaten Die Cutter">
+          <div class="card-overlay">
+            <div class="play-animated-icon"><i class="fa-solid fa-play"></i></div>
+          </div>
+          <span class="badge duration-badge">1:12</span>
+          <span class="badge category-badge">Die Cutting</span>
+        </div>
+        <div class="reel-card-details">
+          <h3 class="machine-title">Bobst Visioncut 106 LE</h3>
+          <div class="machine-metadata">
+            <span class="meta-item"><i class="fa-solid fa-industry"></i> Bobst</span>
+            <span class="meta-item"><i class="fa-solid fa-location-dot"></i> Frankfurt, Germany</span>
+          </div>
+          <div class="card-engagement-footer">
+            <span class="engagement-metric"><i class="fa-regular fa-eye"></i> 8.9K views</span>
+            <span class="engagement-metric"><i class="fa-regular fa-heart"></i> 512</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reel-card" data-id="1" data-category="sheetfed" data-brand="heidelberg" data-country="usa"
+        data-year="2004" data-views="14200" data-date="2026-07-01">
+        <div class="reel-thumbnail-container">
+          <img data-src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&q=80&w=600"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 16'%3E%3C/svg%3E"
+            class="lazy-thumb" alt="Heidelberg 75-7+LX UV Video Machine Demonstration">
+          <div class="card-overlay">
+            <div class="play-animated-icon"><i class="fa-solid fa-play"></i></div>
+          </div>
+          <span class="badge duration-badge">0:45</span>
+          <span class="badge category-badge">Sheetfed / Offset</span>
+        </div>
+        <div class="reel-card-details">
+          <h3 class="machine-title">Heidelberg 75-7+LX -F-Size UV</h3>
+          <div class="machine-metadata">
+            <span class="meta-item"><i class="fa-solid fa-industry"></i> Heidelberg</span>
+            <span class="meta-item"><i class="fa-solid fa-location-dot"></i> Chicago, IL, USA</span>
+          </div>
+          <div class="card-engagement-footer">
+            <span class="engagement-metric"><i class="fa-regular fa-eye"></i> 14.2K views</span>
+            <span class="engagement-metric"><i class="fa-regular fa-heart"></i> 348</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reel-card" data-id="2" data-category="die-cutting" data-brand="bobst" data-country="germany"
+        data-year="2015" data-views="8900" data-date="2026-07-05">
+        <div class="reel-thumbnail-container">
+          <img data-src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 16'%3E%3C/svg%3E"
+            class="lazy-thumb" alt="Bobst Autoplaten Die Cutter">
+          <div class="card-overlay">
+            <div class="play-animated-icon"><i class="fa-solid fa-play"></i></div>
+          </div>
+          <span class="badge duration-badge">1:12</span>
+          <span class="badge category-badge">Die Cutting</span>
+        </div>
+        <div class="reel-card-details">
+          <h3 class="machine-title">Bobst Visioncut 106 LE</h3>
+          <div class="machine-metadata">
+            <span class="meta-item"><i class="fa-solid fa-industry"></i> Bobst</span>
+            <span class="meta-item"><i class="fa-solid fa-location-dot"></i> Frankfurt, Germany</span>
+          </div>
+          <div class="card-engagement-footer">
+            <span class="engagement-metric"><i class="fa-regular fa-eye"></i> 8.9K views</span>
+            <span class="engagement-metric"><i class="fa-regular fa-heart"></i> 512</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reel-card" data-id="1" data-category="sheetfed" data-brand="heidelberg" data-country="usa"
+        data-year="2004" data-views="14200" data-date="2026-07-01">
+        <div class="reel-thumbnail-container">
+          <img data-src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&q=80&w=600"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 16'%3E%3C/svg%3E"
+            class="lazy-thumb" alt="Heidelberg 75-7+LX UV Video Machine Demonstration">
+          <div class="card-overlay">
+            <div class="play-animated-icon"><i class="fa-solid fa-play"></i></div>
+          </div>
+          <span class="badge duration-badge">0:45</span>
+          <span class="badge category-badge">Sheetfed / Offset</span>
+        </div>
+        <div class="reel-card-details">
+          <h3 class="machine-title">Heidelberg 75-7+LX -F-Size UV</h3>
+          <div class="machine-metadata">
+            <span class="meta-item"><i class="fa-solid fa-industry"></i> Heidelberg</span>
+            <span class="meta-item"><i class="fa-solid fa-location-dot"></i> Chicago, IL, USA</span>
+          </div>
+          <div class="card-engagement-footer">
+            <span class="engagement-metric"><i class="fa-regular fa-eye"></i> 14.2K views</span>
+            <span class="engagement-metric"><i class="fa-regular fa-heart"></i> 348</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reel-card" data-id="2" data-category="die-cutting" data-brand="bobst" data-country="germany"
+        data-year="2015" data-views="8900" data-date="2026-07-05">
+        <div class="reel-thumbnail-container">
+          <img data-src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 16'%3E%3C/svg%3E"
+            class="lazy-thumb" alt="Bobst Autoplaten Die Cutter">
+          <div class="card-overlay">
+            <div class="play-animated-icon"><i class="fa-solid fa-play"></i></div>
+          </div>
+          <span class="badge duration-badge">1:12</span>
+          <span class="badge category-badge">Die Cutting</span>
+        </div>
+        <div class="reel-card-details">
+          <h3 class="machine-title">Bobst Visioncut 106 LE</h3>
+          <div class="machine-metadata">
+            <span class="meta-item"><i class="fa-solid fa-industry"></i> Bobst</span>
+            <span class="meta-item"><i class="fa-solid fa-location-dot"></i> Frankfurt, Germany</span>
+          </div>
+          <div class="card-engagement-footer">
+            <span class="engagement-metric"><i class="fa-regular fa-eye"></i> 8.9K views</span>
+            <span class="engagement-metric"><i class="fa-regular fa-heart"></i> 512</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reel-card" data-id="1" data-category="sheetfed" data-brand="heidelberg" data-country="usa"
+        data-year="2004" data-views="14200" data-date="2026-07-01">
+        <div class="reel-thumbnail-container">
+          <img data-src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&q=80&w=600"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 16'%3E%3C/svg%3E"
+            class="lazy-thumb" alt="Heidelberg 75-7+LX UV Video Machine Demonstration">
+          <div class="card-overlay">
+            <div class="play-animated-icon"><i class="fa-solid fa-play"></i></div>
+          </div>
+          <span class="badge duration-badge">0:45</span>
+          <span class="badge category-badge">Sheetfed / Offset</span>
+        </div>
+        <div class="reel-card-details">
+          <h3 class="machine-title">Heidelberg 75-7+LX -F-Size UV</h3>
+          <div class="machine-metadata">
+            <span class="meta-item"><i class="fa-solid fa-industry"></i> Heidelberg</span>
+            <span class="meta-item"><i class="fa-solid fa-location-dot"></i> Chicago, IL, USA</span>
+          </div>
+          <div class="card-engagement-footer">
+            <span class="engagement-metric"><i class="fa-regular fa-eye"></i> 14.2K views</span>
+            <span class="engagement-metric"><i class="fa-regular fa-heart"></i> 348</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reel-card" data-id="2" data-category="die-cutting" data-brand="bobst" data-country="germany"
+        data-year="2015" data-views="8900" data-date="2026-07-05">
+        <div class="reel-thumbnail-container">
+          <img data-src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 16'%3E%3C/svg%3E"
+            class="lazy-thumb" alt="Bobst Autoplaten Die Cutter">
+          <div class="card-overlay">
+            <div class="play-animated-icon"><i class="fa-solid fa-play"></i></div>
+          </div>
+          <span class="badge duration-badge">1:12</span>
+          <span class="badge category-badge">Die Cutting</span>
+        </div>
+        <div class="reel-card-details">
+          <h3 class="machine-title">Bobst Visioncut 106 LE</h3>
+          <div class="machine-metadata">
+            <span class="meta-item"><i class="fa-solid fa-industry"></i> Bobst</span>
+            <span class="meta-item"><i class="fa-solid fa-location-dot"></i> Frankfurt, Germany</span>
+          </div>
+          <div class="card-engagement-footer">
+            <span class="engagement-metric"><i class="fa-regular fa-eye"></i> 8.9K views</span>
+            <span class="engagement-metric"><i class="fa-regular fa-heart"></i> 512</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reel-card" data-id="1" data-category="sheetfed" data-brand="heidelberg" data-country="usa"
+        data-year="2004" data-views="14200" data-date="2026-07-01">
+        <div class="reel-thumbnail-container">
+          <img data-src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&q=80&w=600"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 16'%3E%3C/svg%3E"
+            class="lazy-thumb" alt="Heidelberg 75-7+LX UV Video Machine Demonstration">
+          <div class="card-overlay">
+            <div class="play-animated-icon"><i class="fa-solid fa-play"></i></div>
+          </div>
+          <span class="badge duration-badge">0:45</span>
+          <span class="badge category-badge">Sheetfed / Offset</span>
+        </div>
+        <div class="reel-card-details">
+          <h3 class="machine-title">Heidelberg 75-7+LX -F-Size UV</h3>
+          <div class="machine-metadata">
+            <span class="meta-item"><i class="fa-solid fa-industry"></i> Heidelberg</span>
+            <span class="meta-item"><i class="fa-solid fa-location-dot"></i> Chicago, IL, USA</span>
+          </div>
+          <div class="card-engagement-footer">
+            <span class="engagement-metric"><i class="fa-regular fa-eye"></i> 14.2K views</span>
+            <span class="engagement-metric"><i class="fa-regular fa-heart"></i> 348</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reel-card" data-id="2" data-category="die-cutting" data-brand="bobst" data-country="germany"
+        data-year="2015" data-views="8900" data-date="2026-07-05">
+        <div class="reel-thumbnail-container">
+          <img data-src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 16'%3E%3C/svg%3E"
+            class="lazy-thumb" alt="Bobst Autoplaten Die Cutter">
+          <div class="card-overlay">
+            <div class="play-animated-icon"><i class="fa-solid fa-play"></i></div>
+          </div>
+          <span class="badge duration-badge">1:12</span>
+          <span class="badge category-badge">Die Cutting</span>
+        </div>
+        <div class="reel-card-details">
+          <h3 class="machine-title">Bobst Visioncut 106 LE</h3>
+          <div class="machine-metadata">
+            <span class="meta-item"><i class="fa-solid fa-industry"></i> Bobst</span>
+            <span class="meta-item"><i class="fa-solid fa-location-dot"></i> Frankfurt, Germany</span>
+          </div>
+          <div class="card-engagement-footer">
+            <span class="engagement-metric"><i class="fa-regular fa-eye"></i> 8.9K views</span>
+            <span class="engagement-metric"><i class="fa-regular fa-heart"></i> 512</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reel-card" data-id="1" data-category="sheetfed" data-brand="heidelberg" data-country="usa"
+        data-year="2004" data-views="14200" data-date="2026-07-01">
+        <div class="reel-thumbnail-container">
+          <img data-src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&q=80&w=600"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 16'%3E%3C/svg%3E"
+            class="lazy-thumb" alt="Heidelberg 75-7+LX UV Video Machine Demonstration">
+          <div class="card-overlay">
+            <div class="play-animated-icon"><i class="fa-solid fa-play"></i></div>
+          </div>
+          <span class="badge duration-badge">0:45</span>
+          <span class="badge category-badge">Sheetfed / Offset</span>
+        </div>
+        <div class="reel-card-details">
+          <h3 class="machine-title">Heidelberg 75-7+LX -F-Size UV</h3>
+          <div class="machine-metadata">
+            <span class="meta-item"><i class="fa-solid fa-industry"></i> Heidelberg</span>
+            <span class="meta-item"><i class="fa-solid fa-location-dot"></i> Chicago, IL, USA</span>
+          </div>
+          <div class="card-engagement-footer">
+            <span class="engagement-metric"><i class="fa-regular fa-eye"></i> 14.2K views</span>
+            <span class="engagement-metric"><i class="fa-regular fa-heart"></i> 348</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reel-card" data-id="2" data-category="die-cutting" data-brand="bobst" data-country="germany"
+        data-year="2015" data-views="8900" data-date="2026-07-05">
+        <div class="reel-thumbnail-container">
+          <img data-src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 16'%3E%3C/svg%3E"
+            class="lazy-thumb" alt="Bobst Autoplaten Die Cutter">
+          <div class="card-overlay">
+            <div class="play-animated-icon"><i class="fa-solid fa-play"></i></div>
+          </div>
+          <span class="badge duration-badge">1:12</span>
+          <span class="badge category-badge">Die Cutting</span>
+        </div>
+        <div class="reel-card-details">
+          <h3 class="machine-title">Bobst Visioncut 106 LE</h3>
+          <div class="machine-metadata">
+            <span class="meta-item"><i class="fa-solid fa-industry"></i> Bobst</span>
+            <span class="meta-item"><i class="fa-solid fa-location-dot"></i> Frankfurt, Germany</span>
+          </div>
+          <div class="card-engagement-footer">
+            <span class="engagement-metric"><i class="fa-regular fa-eye"></i> 8.9K views</span>
+            <span class="engagement-metric"><i class="fa-regular fa-heart"></i> 512</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reel-card" data-id="1" data-category="sheetfed" data-brand="heidelberg" data-country="usa"
+        data-year="2004" data-views="14200" data-date="2026-07-01">
+        <div class="reel-thumbnail-container">
+          <img data-src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&q=80&w=600"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 16'%3E%3C/svg%3E"
+            class="lazy-thumb" alt="Heidelberg 75-7+LX UV Video Machine Demonstration">
+          <div class="card-overlay">
+            <div class="play-animated-icon"><i class="fa-solid fa-play"></i></div>
+          </div>
+          <span class="badge duration-badge">0:45</span>
+          <span class="badge category-badge">Sheetfed / Offset</span>
+        </div>
+        <div class="reel-card-details">
+          <h3 class="machine-title">Heidelberg 75-7+LX -F-Size UV</h3>
+          <div class="machine-metadata">
+            <span class="meta-item"><i class="fa-solid fa-industry"></i> Heidelberg</span>
+            <span class="meta-item"><i class="fa-solid fa-location-dot"></i> Chicago, IL, USA</span>
+          </div>
+          <div class="card-engagement-footer">
+            <span class="engagement-metric"><i class="fa-regular fa-eye"></i> 14.2K views</span>
+            <span class="engagement-metric"><i class="fa-regular fa-heart"></i> 348</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reel-card" data-id="2" data-category="die-cutting" data-brand="bobst" data-country="germany"
+        data-year="2015" data-views="8900" data-date="2026-07-05">
+        <div class="reel-thumbnail-container">
+          <img data-src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 16'%3E%3C/svg%3E"
+            class="lazy-thumb" alt="Bobst Autoplaten Die Cutter">
+          <div class="card-overlay">
+            <div class="play-animated-icon"><i class="fa-solid fa-play"></i></div>
+          </div>
+          <span class="badge duration-badge">1:12</span>
+          <span class="badge category-badge">Die Cutting</span>
+        </div>
+        <div class="reel-card-details">
+          <h3 class="machine-title">Bobst Visioncut 106 LE</h3>
+          <div class="machine-metadata">
+            <span class="meta-item"><i class="fa-solid fa-industry"></i> Bobst</span>
+            <span class="meta-item"><i class="fa-solid fa-location-dot"></i> Frankfurt, Germany</span>
+          </div>
+          <div class="card-engagement-footer">
+            <span class="engagement-metric"><i class="fa-regular fa-eye"></i> 8.9K views</span>
+            <span class="engagement-metric"><i class="fa-regular fa-heart"></i> 512</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reel-card" data-id="1" data-category="sheetfed" data-brand="heidelberg" data-country="usa"
+        data-year="2004" data-views="14200" data-date="2026-07-01">
+        <div class="reel-thumbnail-container">
+          <img data-src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&q=80&w=600"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 16'%3E%3C/svg%3E"
+            class="lazy-thumb" alt="Heidelberg 75-7+LX UV Video Machine Demonstration">
+          <div class="card-overlay">
+            <div class="play-animated-icon"><i class="fa-solid fa-play"></i></div>
+          </div>
+          <span class="badge duration-badge">0:45</span>
+          <span class="badge category-badge">Sheetfed / Offset</span>
+        </div>
+        <div class="reel-card-details">
+          <h3 class="machine-title">Heidelberg 75-7+LX -F-Size UV</h3>
+          <div class="machine-metadata">
+            <span class="meta-item"><i class="fa-solid fa-industry"></i> Heidelberg</span>
+            <span class="meta-item"><i class="fa-solid fa-location-dot"></i> Chicago, IL, USA</span>
+          </div>
+          <div class="card-engagement-footer">
+            <span class="engagement-metric"><i class="fa-regular fa-eye"></i> 14.2K views</span>
+            <span class="engagement-metric"><i class="fa-regular fa-heart"></i> 348</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reel-card" data-id="2" data-category="die-cutting" data-brand="bobst" data-country="germany"
+        data-year="2015" data-views="8900" data-date="2026-07-05">
+        <div class="reel-thumbnail-container">
+          <img data-src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 16'%3E%3C/svg%3E"
+            class="lazy-thumb" alt="Bobst Autoplaten Die Cutter">
+          <div class="card-overlay">
+            <div class="play-animated-icon"><i class="fa-solid fa-play"></i></div>
+          </div>
+          <span class="badge duration-badge">1:12</span>
+          <span class="badge category-badge">Die Cutting</span>
+        </div>
+        <div class="reel-card-details">
+          <h3 class="machine-title">Bobst Visioncut 106 LE</h3>
+          <div class="machine-metadata">
+            <span class="meta-item"><i class="fa-solid fa-industry"></i> Bobst</span>
+            <span class="meta-item"><i class="fa-solid fa-location-dot"></i> Frankfurt, Germany</span>
+          </div>
+          <div class="card-engagement-footer">
+            <span class="engagement-metric"><i class="fa-regular fa-eye"></i> 8.9K views</span>
+            <span class="engagement-metric"><i class="fa-regular fa-heart"></i> 512</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reel-card" data-id="1" data-category="sheetfed" data-brand="heidelberg" data-country="usa"
+        data-year="2004" data-views="14200" data-date="2026-07-01">
+        <div class="reel-thumbnail-container">
+          <img data-src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&q=80&w=600"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 16'%3E%3C/svg%3E"
+            class="lazy-thumb" alt="Heidelberg 75-7+LX UV Video Machine Demonstration">
+          <div class="card-overlay">
+            <div class="play-animated-icon"><i class="fa-solid fa-play"></i></div>
+          </div>
+          <span class="badge duration-badge">0:45</span>
+          <span class="badge category-badge">Sheetfed / Offset</span>
+        </div>
+        <div class="reel-card-details">
+          <h3 class="machine-title">Heidelberg 75-7+LX -F-Size UV</h3>
+          <div class="machine-metadata">
+            <span class="meta-item"><i class="fa-solid fa-industry"></i> Heidelberg</span>
+            <span class="meta-item"><i class="fa-solid fa-location-dot"></i> Chicago, IL, USA</span>
+          </div>
+          <div class="card-engagement-footer">
+            <span class="engagement-metric"><i class="fa-regular fa-eye"></i> 14.2K views</span>
+            <span class="engagement-metric"><i class="fa-regular fa-heart"></i> 348</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reel-card" data-id="2" data-category="die-cutting" data-brand="bobst" data-country="germany"
+        data-year="2015" data-views="8900" data-date="2026-07-05">
+        <div class="reel-thumbnail-container">
+          <img data-src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 16'%3E%3C/svg%3E"
+            class="lazy-thumb" alt="Bobst Autoplaten Die Cutter">
+          <div class="card-overlay">
+            <div class="play-animated-icon"><i class="fa-solid fa-play"></i></div>
+          </div>
+          <span class="badge duration-badge">1:12</span>
+          <span class="badge category-badge">Die Cutting</span>
+        </div>
+        <div class="reel-card-details">
+          <h3 class="machine-title">Bobst Visioncut 106 LE</h3>
+          <div class="machine-metadata">
+            <span class="meta-item"><i class="fa-solid fa-industry"></i> Bobst</span>
+            <span class="meta-item"><i class="fa-solid fa-location-dot"></i> Frankfurt, Germany</span>
+          </div>
+          <div class="card-engagement-footer">
+            <span class="engagement-metric"><i class="fa-regular fa-eye"></i> 8.9K views</span>
+            <span class="engagement-metric"><i class="fa-regular fa-heart"></i> 512</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reel-card" data-id="1" data-category="sheetfed" data-brand="heidelberg" data-country="usa"
+        data-year="2004" data-views="14200" data-date="2026-07-01">
+        <div class="reel-thumbnail-container">
+          <img data-src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&q=80&w=600"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 16'%3E%3C/svg%3E"
+            class="lazy-thumb" alt="Heidelberg 75-7+LX UV Video Machine Demonstration">
+          <div class="card-overlay">
+            <div class="play-animated-icon"><i class="fa-solid fa-play"></i></div>
+          </div>
+          <span class="badge duration-badge">0:45</span>
+          <span class="badge category-badge">Sheetfed / Offset</span>
+        </div>
+        <div class="reel-card-details">
+          <h3 class="machine-title">Heidelberg 75-7+LX -F-Size UV</h3>
+          <div class="machine-metadata">
+            <span class="meta-item"><i class="fa-solid fa-industry"></i> Heidelberg</span>
+            <span class="meta-item"><i class="fa-solid fa-location-dot"></i> Chicago, IL, USA</span>
+          </div>
+          <div class="card-engagement-footer">
+            <span class="engagement-metric"><i class="fa-regular fa-eye"></i> 14.2K views</span>
+            <span class="engagement-metric"><i class="fa-regular fa-heart"></i> 348</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reel-card" data-id="2" data-category="die-cutting" data-brand="bobst" data-country="germany"
+        data-year="2015" data-views="8900" data-date="2026-07-05">
+        <div class="reel-thumbnail-container">
+          <img data-src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 16'%3E%3C/svg%3E"
+            class="lazy-thumb" alt="Bobst Autoplaten Die Cutter">
+          <div class="card-overlay">
+            <div class="play-animated-icon"><i class="fa-solid fa-play"></i></div>
+          </div>
+          <span class="badge duration-badge">1:12</span>
+          <span class="badge category-badge">Die Cutting</span>
+        </div>
+        <div class="reel-card-details">
+          <h3 class="machine-title">Bobst Visioncut 106 LE</h3>
+          <div class="machine-metadata">
+            <span class="meta-item"><i class="fa-solid fa-industry"></i> Bobst</span>
+            <span class="meta-item"><i class="fa-solid fa-location-dot"></i> Frankfurt, Germany</span>
+          </div>
+          <div class="card-engagement-footer">
+            <span class="engagement-metric"><i class="fa-regular fa-eye"></i> 8.9K views</span>
+            <span class="engagement-metric"><i class="fa-regular fa-heart"></i> 512</span>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <div id="reelModal" class="md-modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-container-layout">
+      <button class="modal-close-global" id="modalClose" aria-label="Close Preview">&times;</button>
+
+      <div class="modal-main-content">
+        <div class="video-player-canvas">
+          <video id="modalVideo" src="" poster="" preload="auto" loop></video>
+
+          <div class="video-hud-overlay">
+            <div class="hud-top-actions">
+              <button id="modalMute" class="hud-btn" aria-label="Mute Toggle"><i
+                  class="fa-solid fa-volume-high"></i></button>
+            </div>
+            <div class="hud-center-play" id="hudPlayPauseContainer">
+              <i class="fa-solid fa-play central-play-icon"></i>
+            </div>
+            <div class="hud-bottom-timeline">
+              <div class="progress-bar-container" id="progressBarContainer">
+                <div class="progress-filled" id="progressBarFilled"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="video-sidebar-specs">
+          <div class="sidebar-header-info">
+            <span class="badge-accented-category" id="modalCategory">Sheetfed / Offset</span>
+            <h2 id="modalMachineTitle" class="sidebar-title">Heidelberg 75-7+LX -F-Size UV</h2>
+            <p class="sidebar-vendor-location"><i class="fa-solid fa-location-dot"></i> <span
+                id="modalLocation">Chicago, IL</span></p>
+          </div>
+
+          <div class="specs-data-grid">
+            <div class="spec-cell"><strong>Brand:</strong> <span id="modalBrand">Heidelberg</span></div>
+            <div class="spec-cell"><strong>Year:</strong> <span id="modalYear">2004</span></div>
+            <div class="spec-cell"><strong>Views:</strong> <span id="modalViews">14,200</span></div>
+          </div>
+
+          <div class="sidebar-engagement-actions">
+            <button class="action-trigger" id="actionLike"><i class="fa-regular fa-heart"></i>
+              <span>Like</span></button>
+            <button class="action-trigger" id="actionSave"><i class="fa-regular fa-bookmark"></i>
+              <span>Save</span></button>
+            <button class="action-trigger" id="actionShare"><i class="fa-regular fa-share-nodes"></i>
+              <span>Share</span></button>
+          </div>
+
+          <div class="cta-block-sidebar">
+            <a href="#" class="md-btn-primary full-width-btn">View Detailed Marketplace Listing</a>
+          </div>
+
+          <div class="related-reels-section">
+            <h4>Related Listings Demos</h4>
+            <div class="related-scroller-grid">
+              <div class="related-mini-card" onclick="switchActiveReel(2)">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=150"
+                  alt="Related Machine Asset">
+                <div class="mini-card-text">
+                  <span class="title">Bobst Visioncut 106</span>
+                  <span class="meta">Bobst · 2015</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <button class="nav-carousel nav-prev" id="modalPrev" aria-label="Previous Reel"><i
+          class="fa-solid fa-chevron-left"></i></button>
+      <button class="nav-carousel nav-next" id="modalNext" aria-label="Next Reel"><i
+          class="fa-solid fa-chevron-right"></i></button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="#"><img src="images/md-logo-new.svg" alt="logo"></a>
+            <p>The world's most trusted global marketplace for industrial machinery. Connecting buyers and sellers in
+              140+ countries since 2008.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="#">Magazine</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="#">Gallery</a></li>
+              <li><a href="imprint.html">Imprint</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#">Plans & Pricing</a></li>
+              <li><a href="#">Invest</a></li>
+              <li><a href="post-your-requirement.html">Post Your Requirements</a></li>
+              <li><a href="sell-your-equipment.html">Sell Your Equipment</a></li>
+              <li><a href="newsletter.html">Newsletter</a></li>
+              <li><a href="advertisement.html">Advertisement</a></li>
+              <li><a href="frequent-ask-questions.html">FAQs</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Policies</h4>
+            <ul>
+              <li><a href="privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="terms-and-condition.html">Terms & Conditions</a></li>
+              <li><a href="refund-policy.html">Refund Policy</a></li>
+              <li><a href="return-policy.html">Return Policy</a></li>
+              <li><a href="cancellation-policy.html">Cancellation Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>Machine Dalal ® All Rights Reserved</span>
+          <div class="footer-links">
+            From
+            <a href="#">Hashbrown</a>
+            with Love
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="gallery.js"></script>
+
+  <script>
+
+    const mockReelData = {
+      1: {
+        id: 1,
+        title: "Heidelberg 75-7+LX -F-Size UV",
+        category: "Sheetfed / Offset",
+        brand: "Heidelberg",
+        location: "Chicago, IL, USA",
+        year: "2004",
+        views: "14,200",
+        videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-industrial-robotic-arm-assembling-mechanisms-41804-large.mp4"
+      },
+      2: {
+        id: 2,
+        title: "Bobst Visioncut 106 LE",
+        category: "Die Cutting",
+        brand: "Bobst",
+        location: "Frankfurt, Germany",
+        year: "2015",
+        views: "8,900",
+        videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-automated-production-line-in-a-modern-factory-41805-large.mp4"
+      }
+    };
+
+    let currentActiveId = null;
+
+    document.addEventListener("DOMContentLoaded", () => {
+      initLazyLoading();
+      initFilters();
+      initModalEvents();
+    });
+
+    function initLazyLoading() {
+      const lazyImages = document.querySelectorAll(".lazy-thumb");
+
+      if ("IntersectionObserver" in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const image = entry.target;
+              image.src = image.dataset.src;
+              image.classList.remove("lazy-thumb");
+              imageObserver.unobserve(image);
+            }
+          });
+        });
+        lazyImages.forEach(image => imageObserver.observe(image));
+      } else {
+        lazyImages.forEach(img => img.src = img.dataset.src);
+      }
+    }
+
+    function initFilters() {
+      const searchInput = document.getElementById("gallerySearch");
+      const categorySel = document.getElementById("filterCategory");
+      const brandSel = document.getElementById("filterBrand");
+      const countrySel = document.getElementById("filterCountry");
+      const yearSel = document.getElementById("filterYear");
+      const sortSel = document.getElementById("filterSort");
+      const clearBtn = document.getElementById("btnClearFilters");
+
+      const filterElements = [searchInput, categorySel, brandSel, countrySel, yearSel, sortSel];
+      filterElements.forEach(elem => elem.addEventListener("change", evaluateFilterMatrix));
+      searchInput.addEventListener("input", evaluateFilterMatrix);
+
+      clearBtn.addEventListener("click", resetAllFilters);
+    }
+
+    function evaluateFilterMatrix() {
+      const query = document.getElementById("gallerySearch").value.toLowerCase();
+      const cat = document.getElementById("filterCategory").value;
+      const brand = document.getElementById("filterBrand").value;
+      const country = document.getElementById("filterCountry").value;
+
+      const cards = document.querySelectorAll(".reel-card");
+      let matchCount = 0;
+
+      cards.forEach(card => {
+        const textMatch = card.querySelector(".machine-title").textContent.toLowerCase().includes(query);
+        const catMatch = !cat || card.dataset.category === cat;
+        const brandMatch = !brand || card.dataset.brand === brand;
+        const countryMatch = !country || card.dataset.country === country;
+
+        if (textMatch && catMatch && brandMatch && countryMatch) {
+          card.style.display = "flex";
+          matchCount++;
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      const emptyState = document.getElementById("galleryEmptyState");
+      if (matchCount === 0) {
+        emptyState.classList.remove("hidden");
+      } else {
+        emptyState.classList.add("hidden");
+      }
+    }
+
+    function resetAllFilters() {
+      document.getElementById("gallerySearch").value = "";
+      document.getElementById("filterCategory").value = "";
+      document.getElementById("filterBrand").value = "";
+      document.getElementById("filterCountry").value = "";
+      document.getElementById("filterYear").value = "";
+      evaluateFilterMatrix();
+    }
+
+    function initModalEvents() {
+      const cards = document.querySelectorAll(".reel-card");
+      const modal = document.getElementById("reelModal");
+      const closeBtn = document.getElementById("modalClose");
+      const video = document.getElementById("modalVideo");
+      const playPauseContainer = document.getElementById("hudPlayPauseContainer");
+
+      cards.forEach(card => {
+        card.addEventListener("click", () => {
+          const id = card.dataset.id;
+          openReelModal(id);
+        });
+      });
+
+      closeBtn.addEventListener("click", closeReelModal);
+
+      playPauseContainer.addEventListener("click", toggleVideoPlayback);
+      video.addEventListener("click", toggleVideoPlayback);
+
+      document.getElementById("modalMute").addEventListener("click", toggleMuteSystem);
+
+      video.addEventListener("timeupdate", updateProgressBar);
+
+      document.addEventListener("keydown", (e) => {
+        if (modal.classList.contains("hidden")) return;
+        if (e.key === "Escape") closeReelModal();
+        if (e.key === " ") { e.preventDefault(); toggleVideoPlayback(); }
+      });
+    }
+
+    function openReelModal(id) {
+      const data = mockReelData[id];
+      if (!data) return;
+
+      currentActiveId = parseInt(id);
+
+      document.getElementById("modalMachineTitle").textContent = data.title;
+      document.getElementById("modalCategory").textContent = data.category;
+      document.getElementById("modalLocation").textContent = data.location;
+      document.getElementById("modalBrand").textContent = data.brand;
+      document.getElementById("modalYear").textContent = data.year;
+      document.getElementById("modalViews").textContent = data.views;
+
+      const video = document.getElementById("modalVideo");
+      video.src = data.videoUrl;
+
+      document.getElementById("reelModal").classList.remove("hidden");
+      document.body.style.overflow = "hidden"; 
+
+      video.play().catch(() => {
+      
+      });
+    }
+
+    function closeReelModal() {
+      const video = document.getElementById("modalVideo");
+      video.pause();
+      video.src = "";
+      document.getElementById("reelModal").classList.add("hidden");
+      document.body.style.overflow = "";
+    }
+
+    function toggleVideoPlayback() {
+      const video = document.getElementById("modalVideo");
+      const icon = document.querySelector(".central-play-icon");
+
+      if (video.paused) {
+        video.play();
+        icon.className = "fa-solid fa-pause central-play-icon";
+        setTimeout(() => { icon.style.opacity = "0"; }, 400);
+      } else {
+        video.pause();
+        icon.className = "fa-solid fa-play central-play-icon";
+        icon.style.opacity = "0.8";
+      }
+    }
+
+    function toggleMuteSystem() {
+      const video = document.getElementById("modalVideo");
+      const btn = document.getElementById("modalMute");
+      video.muted = !video.muted;
+      btn.innerHTML = video.muted ? '<i class="fa-solid fa-volume-xmark"></i>' : '<i class="fa-solid fa-volume-high"></i>';
+    }
+
+    function updateProgressBar() {
+      const video = document.getElementById("modalVideo");
+      const filled = document.getElementById("progressBarFilled");
+      if (video.duration) {
+        const percentage = (video.currentTime / video.duration) * 100;
+        filled.style.width = `${percentage}%`;
+      }
+    }
+
+    function switchActiveReel(id) {
+      openReelModal(id);
+    }
+  </script>
+</body>
+
+</html>

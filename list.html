@@ -12,12 +12,9 @@
 
   <link rel="preconnect" href="https://fonts.gstatic.com" />
 
-
-
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <link rel="icon" type="image/ico" href="images/favicon.ico" alt="Machinedalal-Logo" />
   <link rel="preload, stylesheet" as="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -59,7 +56,7 @@
                 </a>
               </div>
               <div class="header_mach_txt">
-               <ul class="header_mach_subtxt">
+                <ul class="header_mach_subtxt">
                   <li>
                     <p data-menu="products" class="products">
                       Machinery
@@ -96,7 +93,7 @@
             </div>
             <div class="headerSearch">
               <div class="search-wrap">
-                <div class="search-row">
+                <div class="search-row list_sort_click">
                   <span class="search-ico">
                     <img src="images/search.svg" alt="search">
                   </span>
@@ -106,6 +103,181 @@
                   <div class="search-input-wrap">
                     <input class="search-input" type="text" id="heroSearch"
                       placeholder="Search machines, brands, models or factories..." autocomplete="off">
+                      <span class="search_close">
+                        <img src="images/close.svg" alt="close">
+                      </span>
+                  </div>
+                </div>
+
+                <div class="list_sort_dropdown">
+                  <div class="dropdown-section" data-section="recent">
+                    <p class="dropdown-heading">Recent searches
+                      <button type="button" class="text-link" data-action="clear-recent">Clear all</button>
+                    </p>
+                    <div class="empty-block" id="emptyRecent">
+                      <img src="images/search-mach.svg" alt="Search">
+                      <p class="empty-title">No recent searches yet</p>
+                      <p class="empty-sub">Things you search for will show up here so you can find them again fast.</p>
+                    </div>
+                    <div class="dropdown_list" id="recentListWrap">
+                      <ul class="list_sort_dropdown_inner" id="recentList">
+                        <li>
+                          <a href="#" class="banner_dropdown_li">
+                            <div class="banner_drop_cat">
+                              <img src="images/clock.svg" alt="icon">
+                              <p class="banner_drop_cat_text">Sheetfed/ Offset</p>
+                            </div>
+                            <span class="banner_drop_cat_del">
+                              <img src="images/delete.svg" alt="delete">
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="banner_dropdown_li">
+                            <div class="banner_drop_cat">
+                              <img src="images/clock.svg" alt="icon">
+                              <p class="banner_drop_cat_text">Komori</p>
+                            </div>
+                            <span class="banner_drop_cat_del">
+                              <img src="images/delete.svg" alt="delete">
+                            </span>
+                          </a>
+                        </li>
+                        <li class="list_sctive">
+                          <a href="#" class="banner_dropdown_li">
+                            <div class="banner_drop_cat">
+                              <img src="images/clock.svg" alt="icon">
+                              <p class="banner_drop_cat_text">Guru Ramdas</p>
+                            </div>
+                            <span class="banner_drop_cat_del">
+                              <img src="images/delete.svg" alt="delete">
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="banner_dropdown_li">
+                            <div class="banner_drop_cat">
+                              <img src="images/clock.svg" alt="icon">
+                              <p class="banner_drop_cat_text">S.S</p>
+                            </div>
+                            <span class="banner_drop_cat_del">
+                              <img src="images/delete.svg" alt="delete">
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="banner_dropdown_li">
+                            <div class="banner_drop_cat">
+                              <img src="images/clock.svg" alt="icon">
+                              <p class="banner_drop_cat_text">Booklet</p>
+                            </div>
+                            <span class="banner_drop_cat_del">
+                              <img src="images/delete.svg" alt="delete">
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="banner_dropdown_li">
+                            <div class="banner_drop_cat">
+                              <img src="images/clock.svg" alt="icon">
+                              <p class="banner_drop_cat_text">Diecutter</p>
+                            </div>
+                            <span class="banner_drop_cat_del">
+                              <img src="images/delete.svg" alt="delete">
+                            </span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="dropdown-section no-border" data-section="popular">
+                    <div class="dropdown-heading">
+                      <span>Popular searches</span>
+                    </div>
+                    <div class="chip-row">
+                      <button type="button" class="chip" data-role="chip" data-term="Injection Molding Machine">Injection Molding Machine</button>
+                      <button type="button" class="chip" data-role="chip" data-term="Hydraulic Press">Hydraulic Press</button>
+                      <button type="button" class="chip" data-role="chip" data-term="Air Compressor">Air Compressor</button>
+                      <button type="button" class="chip" data-role="chip" data-term="Laser Cutting Machine">Laser Cutting Machine</button>
+                      <button type="button" class="chip" data-role="chip" data-term="CNC Lathe">CNC Lathe</button>
+                      <button type="button" class="chip" data-role="chip" data-term="Flexo Printing Press">Flexo Printing Press</button>
+                    </div>
+                  </div>
+
+                  <div class="dropdown-section no-border">
+                    <div class="dropdown-heading">
+                      <span>Machinery</span>
+                      <span class="count-pill">3</span>
+                    </div>
+                   <div class="dropdown_card_list">
+                    <a href="list-detail.html" class="dropdown_listing-card fade-up">
+                      <div class="listing-img">
+                        <img src="https://eurografstorage.blob.core.windows.net/eurograf/used-equipments/Sheet-Fed-Offset-Heidelberg-75-7-LX-F-Size-UV-thumbnail-639152890239343398.jpeg" alt="machine">
+                        <div class="listing-badges">
+                          <span class="badge">
+                            IN STOCK
+                          </span>
+                        </div>
+                      </div>
+                      <div class="listing-body">
+                        <h3 class="listing-title">
+                          75-7+LX -F-Size UV
+                        </h3>
+                       
+                      </div>
+                      <div class="listing-footer">
+                        <span class="listing-title_main">Heidelberg</span>
+                        
+                      </div>
+                    </a>
+                    <a href="list-detail.html" class="dropdown_listing-card fade-up">
+                      <div class="listing-img">
+                        <img src="https://eurografstorage.blob.core.windows.net/eurograf/used-equipments/Sheet-Fed-Offset-Heidelberg-75-7-LX-F-Size-UV-thumbnail-639152890239343398.jpeg" alt="machine">
+                        <div class="listing-badges">
+                          <span class="badge">
+                            IN STOCK
+                          </span>
+                        </div>
+                      </div>
+                      <div class="listing-body">
+                        <h3 class="listing-title">
+                          75-7+LX -F-Size UV
+                        </h3>
+                       
+                      </div>
+                      <div class="listing-footer">
+                        <span class="listing-title_main">Heidelberg</span>
+                      </div>
+                    </a>
+                    <a href="list-detail.html" class="dropdown_listing-card fade-up">
+                      <div class="listing-img">
+                        <img src="https://eurografstorage.blob.core.windows.net/eurograf/used-equipments/Sheet-Fed-Offset-Heidelberg-75-7-LX-F-Size-UV-thumbnail-639152890239343398.jpeg" alt="machine">
+                        <div class="listing-badges">
+                          <span class="badge">
+                            IN STOCK
+                          </span>
+                        </div>
+                      </div>
+                      <div class="listing-body">
+                        <h3 class="listing-title">
+                          75-7+LX -F-Size UV
+                        </h3>
+                       
+                      </div>
+                      <div class="listing-footer">
+                        <span class="listing-title_main">Heidelberg</span>
+                        
+                      </div>
+                    </a>
+                   </div>
+                   <div class="dropdown_card_view">
+                    <a href="#" class="view-all">
+                      View All
+                      <span class="material-symbols-outlined">
+                        trending_flat
+                      </span>
+                    </a>
+                   </div>
                   </div>
                 </div>
               </div>
@@ -121,15 +293,53 @@
                 <span class="profile-ico">
                   <img src="images/login-2.svg" alt="profile">
                   <div class="profile_info_drop">
-                    <div class="profile_info">
-                      <span class="profile-login_ico">
-                        <img src="images/profile.png" alt="profile">
-                      </span>
-                      <p>John Doe</p>
+                    <div class="profile_info_head">
+                      <div class="profile_login_ico">
+                        <img src="images/avtar-2.svg" alt="avatar">
+                      </div>
+                      <div class="profile_info_name">
+                        <p class="profile_name">Maria Wilson</p>
+                        <p class="profile_email">company@gmail.com</p>
+                      </div>
                     </div>
-                    <a href="#" class="profile_signOut">
-                      Sign Out
-                    </a>
+                    <div class="profile_info_body">
+                      <ul class="profile_info_list">
+                        <li>
+                          <a href="#" class="profile_info_link">
+                            <img src="images/person.svg" alt="account">
+                            <p>Account</p>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="profile_info_link">
+                            <img src="images/mssg.svg" alt="account">
+                            <p>Conversations</p>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="profile_info_link">
+                            <img src="images/agent.svg" alt="account">
+                            <p>Contact Us</p>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="profile_info_link">
+                            <img src="images/notify-2.svg" alt="account">
+                            <p>Notifications</p>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="profile_info_footer">
+                      <ul class="profile_info_list">
+                        <li>
+                          <a href="#" class="profile_info_link">
+                            <img src="images/log-out.svg" alt="account">
+                            <p>Sign Out</p>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </span>
               </div>
@@ -159,173 +369,192 @@
 
         </div>
         <!-- Mobile menu -->
-        <nav class="mobile-menu mobile_nav_menu" id="mobile-menu" aria-label="Mobile navigation" aria-hidden="true">
+       <nav class="mobile-menu mobile_nav_menu" id="mobile-menu" aria-label="Mobile navigation" aria-hidden="true">
           <div class="container">
             <ul class="mobile-menu__list" role="list">
               <li>
-                <a href="#" class="mobile-menu__link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                <span class="mobile-menu__link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                   aria-controls="offcanvasRight">
-                  <span>Machinery</span>
+                  <p class="mobile-menu__link_txt">Machinery</p>
                   <span class="arrow_icon"><img src="images/arrow-right.svg" alt="arrow icon"></span>
-                </a>
+                </span>
 
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
                   aria-labelledby="offcanvasRightLabel1">
                   <div class="offcanvas-header">
-                    <h5 class="text-reset" id="offcanvasRightLabel1" data-bs-dismiss="offcanvas" aria-label="Close"><img
-                        src="images/arrow-left-2.svg" alt="back">Main Menu</h5>
+                    <div class="container">
+                      <h5 class="text-reset" id="offcanvasRightLabel1" data-bs-dismiss="offcanvas" aria-label="Close">
+                        <img src="images/arrow-left-2.svg" alt="back">Main Menu</h5>
+                    </div>
                   </div>
                   <div class="offcanvas-body">
-                    
+
                     <div class="mob_menu_right">
-                      <div class="mobile_menu_sublist_sec">
-                        <div class="header_menu_new_subsec_moblist">
-                          <ul class="header_menu_new_subsec_list_ul">
-                            <li>
-                              <div class="header_menu_list1">
-                                <div class="header_menu_list11">
+                      <div class="container">
+                        <div class="mobile_menu_sublist_sec">
+                          <div class="header_menu_new_subsec_moblist">
+                            <ul class="header_menu_new_subsec_list_ul">
+                              <li>
+                                <div class="header_menu_list1">
+                                  <div class="header_menu_list11">
 
-                                  <a href="#">Sheet Fed / Offset <span>(1302)</span></a>
+                                    <a href="#">Sheet Fed / Offset <span>(1302)</span></a>
+                                  </div>
                                 </div>
-                              </div>
-                            </li>
-                            <li>
-                              <div class="header_menu_list1 header_menu_list2">
-                                <div class="header_menu_list11">
+                              </li>
+                              <li>
+                                <div class="header_menu_list1 header_menu_list2">
+                                  <div class="header_menu_list11">
 
-                                  <a href="#">Pre Press <span>(35)</span></a>
+                                    <a href="#">Pre Press <span>(35)</span></a>
+                                  </div>
+                                  <ul class="subcategory_list">
+                                    <li>
+                                      <p>CTP Systems (25)</p>
+                                    </li>
+                                    <li>
+                                      <p>Plate Processors (5)</p>
+                                    </li>
+                                    <li>
+                                      <p>Plate Punchers / Benders (1)</p>
+                                    </li>
+                                  </ul>
                                 </div>
-                                <ul class="subcategory_list">
-                                  <li>
-                                    <p>CTP Systems (25)</p>
-                                  </li>
-                                  <li>
-                                    <p>Plate Processors (5)</p>
-                                  </li>
-                                  <li>
-                                    <p>Plate Punchers / Benders (1)</p>
-                                  </li>
-                                </ul>
-                              </div>
-                            </li>
-                            <li>
-                              <div class="header_menu_list1 header_menu_list2">
-                                <div class="header_menu_list11">
+                              </li>
+                              <li>
+                                <div class="header_menu_list1 header_menu_list2">
+                                  <div class="header_menu_list11">
 
-                                  <a href="#">Post Press <span>(880)</span></a>
+                                    <a href="#">Post Press <span>(880)</span></a>
+                                  </div>
+                                  <ul class="subcategory_list">
+                                    <li>
+                                      <p>Accessories (26)</p>
+                                    </li>
+                                    <li>
+                                      <p>Book Production (15)</p>
+                                    </li>
+                                    <li>
+                                      <p>Calendar Production (7)</p>
+                                    </li>
+                                  </ul>
                                 </div>
-                                <ul class="subcategory_list">
-                                  <li>
-                                    <p>Accessories (26)</p>
-                                  </li>
-                                  <li>
-                                    <p>Book Production (15)</p>
-                                  </li>
-                                  <li>
-                                    <p>Calendar Production (7)</p>
-                                  </li>
-                                </ul>
-                              </div>
-                            </li>
-                            <li>
-                              <div class="header_menu_list1 header_menu_list2">
-                                <div class="header_menu_list11">
+                              </li>
+                              <li>
+                                <div class="header_menu_list1 header_menu_list2">
+                                  <div class="header_menu_list11">
 
-                                  <a href="#">Converting <span>(82)</span></a>
+                                    <a href="#">Converting <span>(82)</span></a>
+                                  </div>
+                                  <ul class="subcategory_list">
+                                    <li>
+                                      <p>Bag Making (13)</p>
+                                    </li>
+                                    <li>
+                                      <p>Converting Machines (1)</p>
+                                    </li>
+                                    <li>
+                                      <p>Flexographic Equipment (36)</p>
+                                    </li>
+                                  </ul>
                                 </div>
-                                <ul class="subcategory_list">
-                                  <li>
-                                    <p>Bag Making (13)</p>
-                                  </li>
-                                  <li>
-                                    <p>Converting Machines (1)</p>
-                                  </li>
-                                  <li>
-                                    <p>Flexographic Equipment (36)</p>
-                                  </li>
-                                </ul>
-                              </div>
-                            </li>
-                            <li>
-                              <div class="header_menu_list1 header_menu_list2">
-                                <div class="header_menu_list11">
+                              </li>
+                              <li>
+                                <div class="header_menu_list1 header_menu_list2">
+                                  <div class="header_menu_list11">
 
-                                  <a href="#">Web <span>(25)</span></a>
+                                    <a href="#">Web <span>(25)</span></a>
+                                  </div>
+                                  <ul class="subcategory_list">
+                                    <li>
+                                      <p>Flexo (3)</p>
+                                    </li>
+                                    <li>
+                                      <p>Gravure / Rotogravure (9)</p>
+                                    </li>
+                                    <li>
+                                      <p>Labels and Forms (1)</p>
+                                    </li>
+                                    <li>
+                                      <p>Commercial / Heatset (9)</p>
+                                    </li>
+                                  </ul>
                                 </div>
-                                <ul class="subcategory_list">
-                                  <li>
-                                    <p>Flexo (3)</p>
-                                  </li>
-                                  <li>
-                                    <p>Gravure / Rotogravure (9)</p>
-                                  </li>
-                                  <li>
-                                    <p>Labels and Forms (1)</p>
-                                  </li>
-                                  <li>
-                                    <p>Commercial / Heatset (9)</p>
-                                  </li>
-                                </ul>
-                              </div>
-                            </li>
-                          </ul>
+                              </li>
+                            </ul>
+                          </div>
+
                         </div>
-
                       </div>
                     </div>
                   </div>
 
                   <div class="offcanvas-footer">
                     <div class="header_menu_new_subsec_2">
-                      <div class="header_menu_new_subsec_2_inner">
-                        <div class="header_menu_new_subsec_2_inner1">
-                          <div class="header_menu_new_subsec_2_inner11">
-                            <span>
-                              <img src="images/global-2.svg" alt="">
-                            </span>
-                            <div class="header_menu_new_subsec_2_inner11_text">
-                              <h4>Global Logistics</h4>
-                              <p>Real-time shipping quotes worldwide.</p>
+                      <div class="container">
+                        <div class="header_menu_new_subsec_2_inner">
+                          <div class="header_menu_new_subsec_2_inner1">
+                            <div class="header_menu_new_subsec_2_inner11">
+                              <span>
+                                <img src="images/global-2.svg" alt="Global Logistics">
+                              </span>
+                              <div class="header_menu_new_subsec_2_inner11_text">
+                                <h4>Global Logistics</h4>
+                                <p>Real-time shipping quotes worldwide.</p>
+                              </div>
+                            </div>
+                            <div class="header_menu_new_subsec_2_inner11 header_menu_new_subsec_2_inner12">
+                              <span>
+                                <img src="images/flexible.svg" alt="Flexible Financing">
+                              </span>
+                              <div class="header_menu_new_subsec_2_inner11_text">
+                                <h4>Flexible Financing</h4>
+                                <p>Secure asset-backed lending options.</p>
+                              </div>
                             </div>
                           </div>
-                          <div class="header_menu_new_subsec_2_inner11 header_menu_new_subsec_2_inner12">
-                            <span>
-                              <img src="images/flexible.svg" alt="">
-                            </span>
-                            <div class="header_menu_new_subsec_2_inner11_text">
-                              <h4>Flexible Financing</h4>
-                              <p>Secure asset-backed lending options.</p>
-                            </div>
+
+                          <div class="explore_inven">
+                            <button type="button" class="explore_inven_btn"
+                              onclick="window.location.href = 'list.html';">
+                              EXPLORE
+                              <span class="material-symbols-outlined">
+                                trending_flat
+                              </span>
+                            </button>
                           </div>
                         </div>
-
-                        <div class="explore_inven">
-                          <button type="button" class="explore_inven_btn"
-                            onclick="window.location.href = 'list.html';">
-                            EXPLORE
-                            <span class="material-symbols-outlined">
-                              trending_flat
-                            </span>
-                          </button>
-                        </div>
-
                       </div>
-
                     </div>
                   </div>
 
                 </div>
 
-
+                
               </li>
-              <li><a href="#" class="mobile-menu__link">Brands</a></li>
+              <li><a href="brands.html" class="mobile-menu__link">Brands</a></li>
               <li><a href="#" class="mobile-menu__link">Concierge</a></li>
               <li><a href="#" class="mobile-menu__link">Liquidation</a></li>
               <li><a href="#" class="mobile-menu__link">Plans</a></li>
 
 
             </ul>
-
+            <!-- <div class="mobile-menu__divider"></div>
+            <div class="mobile-menu__user">
+              
+              <a href="#" class="mobile-menu__link mobile-menu__link--ico"><span
+                  class="material-symbols-outlined location-ico">
+                  notifications
+                </span>Notifications</a>
+              <a href="#" class="mobile-menu__link mobile-menu__link--user mobile-menu__link--userlogin d-none"><span
+                  class="material-symbols-outlined location-ico">
+                  person
+                </span><span class="user_name">Login</span></a>
+              <a href="#" class="mobile-menu__link mobile-menu__link--user"><span
+                  class="material-symbols-outlined location-ico">
+                  person
+                </span><span class="user_name">James Anderson</span></a>
+            </div> -->
           </div>
         </nav>
       </div>
@@ -465,7 +694,7 @@
                 <div class="header_menu_new_subsec_2_inner1">
                   <div class="header_menu_new_subsec_2_inner11">
                     <span>
-                      <img src="images/global-2.svg" alt="">
+                      <img src="images/global-2.svg" alt="Global Logistics">
                     </span>
                     <div class="header_menu_new_subsec_2_inner11_text">
                       <h4>Global Logistics</h4>
@@ -474,7 +703,7 @@
                   </div>
                   <div class="header_menu_new_subsec_2_inner11 header_menu_new_subsec_2_inner12">
                     <span>
-                      <img src="images/flexible.svg" alt="">
+                      <img src="images/flexible.svg" alt="Flexible Financing">
                     </span>
                     <div class="header_menu_new_subsec_2_inner11_text">
                       <h4>Flexible Financing</h4>
@@ -522,7 +751,7 @@
     <section class="md_list_sec_main">
       <div class="container">
         <div class="md_list_sub">
-        
+
           <div class="md_list_sidebar md_list_sidebar_mob">
             <span class="material-symbols-outlined close_list"> close </span>
             <div class="md_list_sidebar_inner">
@@ -542,38 +771,63 @@
               </div>
 
               <div class="md_list_sidebar_list">
-                <div class="md_list_sidebar_list1 md_list_sidebar_list_check">
+                <div class="md_list_sidebar_list1 md_list_sidebar_list_check md_list_sidebar_filters">
                   <h3>
                     Filters
+                    <div class="md_clear_filters">
+                      <p>Clear All</p>
+                    </div>
                   </h3>
                   <div class="md_list_sidebar_list11">
                     <div class="md_sidebar_filter_Sec">
+                      
                       <p class="md_sidebar_filter">
                         <span>
-                          Post Press <img src="images/close.svg" alt="close">
+                          <span class="md_sidebar_filter_name"><span class="md_sidebar_filter_name">Category:</span></span> Sheet Fed/ Offset <img src="images/close.svg" alt="close">
                         </span>
                       </p>
                       <p class="md_sidebar_filter">
                         <span>
-                          Category: <span>Pre Press</span> <img src="images/close.svg" alt="close">
+                          <span class="md_sidebar_filter_name">Brand:</span> DAI's, Komori, Adast, Akiyama, Hamada, Crabtree, Hans Gronhi, Miller, EDELMAN, KBA, Kodak, Manroland, Miller, DAI's, Komori, Adast, Akiyama, Hamada, Crabtree, Hans Gronhi, Miller, EDELMAN, KBA, Kodak, Manroland, Miller </span>
+                      </p>
+
+                      <p class="md_sidebar_filter">
+                        <span>
+                          <span class="md_sidebar_filter_name">Location:</span> Australia <img src="images/close.svg" alt="close">
+                        </span>
+                      </p>
+                      
+                      <p class="md_sidebar_filter">
+                        <span>
+                          <span class="md_sidebar_filter_name">Year:</span> 1992 <img src="images/close.svg" alt="close">
+                        </span>
+                      </p>
+                      
+                      <p class="md_sidebar_filter">
+                        <span>
+                          <span class="md_sidebar_filter_name">Category:</span> Pre Press <img src="images/close.svg" alt="close">
                         </span>
                       </p>
                       <p class="md_sidebar_filter">
                         <span>
-                          Brand: <span>DAI’s</span> <img src="images/close.svg" alt="close">
+                          <span class="md_sidebar_filter_name">Category:</span> Post Press <img src="images/close.svg" alt="close">
                         </span>
                       </p>
                       <p class="md_sidebar_filter">
                         <span>
-                          Year: <span>1992</span> <img src="images/close.svg" alt="close">
+                          <span class="md_sidebar_filter_name">Year:</span> 1992 <img src="images/close.svg" alt="close">
                         </span>
                       </p>
                     </div>
+
+                    <button type="button" class="show-more-btn_2">
+                      Show More
+                    </button>
                   </div>
                 </div>
-  
+
                 <div class="md_list_sidebar_list_main">
-  
+
                   <div class="md_list_sidebar_list1 md_list_sidebar_list_check">
                     <h3>
                       Categories
@@ -584,28 +838,36 @@
                           <span class="list-search-ico">
                             <img src="images/search.svg" alt="search">
                           </span>
-  
+
                           <div class="list-search-input-wrap">
                             <input class="list-search-input" type="text" id="heroSearch" placeholder="Search here"
                               autocomplete="off">
+                              <span class="search_close">
+                                <img src="images/close.svg" alt="close">
+                              </span>
                           </div>
-  
+
                         </div>
                       </div>
-  
-  
+
+
                     </div>
+                    <!-- Category not found -->
+                    <div class="sidebar-no-results">
+                      <h4 class="no-results-title">No Category Found</h4>
+                    </div>
+                    <!-- Category not found -->
+
                   </div>
-  
+
                   <div class="md_list_sidebar_list1">
                     <h3>
                       <a href="#">Sheet Fed / Offset</span></a>
                     </h3>
-  
                   </div>
-  
+
                   <div class="md_list_sidebar_list1">
-                    <h3>
+                    <h3> 
                       <a href="#" class="selected_list">Pre Press <span>(35)</span></a>
                     </h3>
                     <div class="md_list_sidebar_list11">
@@ -621,14 +883,14 @@
                       </div>
                       <div class="md_list_sidebar_list111">
                         <span class="md_list_label">
-                          Plate Punchers / Benders (1)
+                          Die-cutters- automatic and handfed (5)
                         </span>
                       </div>
-  
-  
+
+
                     </div>
                   </div>
-  
+
                   <div class="md_list_sidebar_list1">
                     <h3>
                       <a href="#">Post Press <span>(35)</span></a>
@@ -649,12 +911,12 @@
                           Plate Punchers / Benders (1)
                         </span>
                       </div>
-  
-  
+
+
                     </div>
                   </div>
                 </div>
-  
+
                 <div class="md_list_sidebar_list1 md_list_sidebar_list_check">
                   <h3>
                     Brands
@@ -742,7 +1004,7 @@
                     </div>
                   </div>
                 </div>
-  
+
                 <div class="md_list_sidebar_list1 md_list_sidebar_list_check">
                   <h3>
                     LOCATION
@@ -790,7 +1052,7 @@
                     </div>
                   </div>
                 </div>
-  
+
                 <div class="md_list_sidebar_list1 md_list_sidebar_list_check">
                   <h3>
                     Year
@@ -820,7 +1082,7 @@
                         </label>1956
                       </span>
                     </div>
-  
+
                   </div>
                 </div>
               </div>
@@ -838,8 +1100,6 @@
                   </div>
                 </div>
               </div>
-
-              
 
               <div class="md_list_sidebar_list1 md_list_sidebar_list2">
                 <h3>
@@ -861,26 +1121,26 @@
 
             <div class="md_list_content_head md_list_content_head_2">
               <div class="md_list_content_head_txt">
-                <h1 class="section-title_2">Machinery  
-                  <div class="add_filter">
-                    <div class="mob_map_view">
-                      <button class="view-all view_map"><span class="material-symbols-outlined"> globe_location_pin </span></button>
-                    </div>
-                    <div class="add_filter_btn">
-                      <button class="show_sideBar"><span class="material-symbols-outlined"> tune </span></button>
-                    </div>
+              <div class="md_list_content_head_txt_flex">
+                <h1 class="section-title_2">Machinery </h1>
+                <div class="add_filter">
+                  <div class="mob_map_view">
+                    <button class="view-all view_map"><span class="material-symbols-outlined"> globe_location_pin
+                      </span></button>
                   </div>
-                </h1>
-                <h2 class="section-sub">Discover a curated selection of sheetfed machines currently available on Machine
-                  Dalal. Whether you’re looking to buy, upgrade, or explore reliable sheetfed printing presses Discover
-                  a curated selection of sheetfed machines currently available on Machine Dalal.</h2>
+                  <div class="add_filter_btn">
+                    <button class="show_sideBar"><span class="material-symbols-outlined"> tune </span></button>
+                  </div>
+                </div>
+              </div>
+                <p class="section-sub">Discover a curated selection of sheetfed machines currently available on Machine Dalal. Whether you’re looking to buy, upgrade, or explore reliable sheetfed printing presses Discover a curated selection of sheetfed machines currently available on Machine Dalal.</p>
               </div>
 
               <div class="md_list_content_head_sec">
                 <div class="md_list_content_head_sec_inner">
-                  <p>Additional Features:</p>
+                  <p>Additional Filters:</p>
                   <div class="md_list_content_head_sort" id="md_list_sheetsize">
-                    
+
                     <div class="md_list_sort_btn_sec md_list_sheetsize">
                       <button type="button" class="md_list_content_head_sort_btn list_sort_click">
                         <span class="sort_btn_txt txt_bold">Sheetsize</span>
@@ -888,23 +1148,31 @@
                         <span class="sort_drp"><img src="images/arrow-down.svg" alt="arrow icon"></span>
                       </button>
                       <div class="list_sort_dropdown">
-                        <ul class="list_sort_dropdown_inner">
-                          <li>
-                            <div class="list_sort_search">
-                              <div class="list-search-wrap">
-                                <div class="list-search-row">
-                                  <span class="list-search-ico">
-                                    <img src="images/search.svg" alt="search">
+                        <div class="list_sort_search">
+                          <div class="list-search-wrap">
+                            <div class="list-search-row">
+                              <span class="list-search-ico">
+                                <img src="images/search.svg" alt="search">
+                              </span>
+
+                              <div class="list-search-input-wrap">
+                                <input class="list-search-input" type="text" id="heroSearch"
+                                  placeholder="Search Sheetsize here" autocomplete="off">
+                                  <span class="search_close">
+                                    <img src="images/close.svg" alt="close">
                                   </span>
-          
-                                  <div class="list-search-input-wrap">
-                                    <input class="list-search-input" type="text" id="heroSearch" placeholder="Search Sheetsize here" autocomplete="off">
-                                  </div>
-          
-                                </div>
                               </div>
+
                             </div>
-                          </li>
+                          </div>
+                        </div>
+
+                        <div class="sidebar-no-results list-no-results">
+                          <h4 class="no-results-title">No SheetSize Match</h4>
+                        </div>
+
+                        <ul class="list_sort_dropdown_inner">
+                          
                           <li>
                             <div class="list_sort_dropdown_li">
                               <div class="md_list_sidebar_list111">
@@ -912,11 +1180,12 @@
                                   <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
                                     <input type="checkbox">
                                     <span></span>
-                                  </label>Sheetsize
+                                  </label>10.00 X 14.00 cm / 3.94 X 5.51 inch
                                 </span>
                               </div>
                             </div>
                           </li>
+
                           <li>
                             <div class="list_sort_dropdown_li">
                               <div class="md_list_sidebar_list111">
@@ -924,11 +1193,12 @@
                                   <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
                                     <input type="checkbox">
                                     <span></span>
-                                  </label>Sheetsize
+                                  </label>10.00 X 14.00 cm / 3.94 X 5.51 inch
                                 </span>
                               </div>
                             </div>
                           </li>
+
                           <li>
                             <div class="list_sort_dropdown_li">
                               <div class="md_list_sidebar_list111">
@@ -936,11 +1206,12 @@
                                   <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
                                     <input type="checkbox">
                                     <span></span>
-                                  </label>Sheetsize
+                                  </label>10.00 X 14.00 cm / 3.94 X 5.51 inch
                                 </span>
                               </div>
                             </div>
                           </li>
+
                           <li>
                             <div class="list_sort_dropdown_li">
                               <div class="md_list_sidebar_list111">
@@ -948,11 +1219,12 @@
                                   <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
                                     <input type="checkbox">
                                     <span></span>
-                                  </label>Sheetsize
+                                  </label>10.00 X 14.00 cm / 3.94 X 5.51 inch
                                 </span>
                               </div>
                             </div>
                           </li>
+                          
                           <li class="list_sctive">
                             <div class="list_sort_dropdown_li">
                               <div class="md_list_sidebar_list111">
@@ -960,11 +1232,194 @@
                                   <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
                                     <input type="checkbox">
                                     <span></span>
-                                  </label>Sheetsize
+                                  </label>10.00 X 14.00 cm / 3.94 X 5.51 inch
                                 </span>
                               </div>
                             </div>
                           </li>
+
+                          <li>
+                            <div class="list_sort_dropdown_li">
+                              <div class="md_list_sidebar_list111">
+                                <span class="md_list_label">
+                                  <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                    <input type="checkbox">
+                                    <span></span>
+                                  </label>10.00 X 14.00 cm / 3.94 X 5.51 inch
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+
+                          <li>
+                            <div class="list_sort_dropdown_li">
+                              <div class="md_list_sidebar_list111">
+                                <span class="md_list_label">
+                                  <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                    <input type="checkbox">
+                                    <span></span>
+                                  </label>10.00 X 14.00 cm / 3.94 X 5.51 inch
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+
+                          <li>
+                            <div class="list_sort_dropdown_li">
+                              <div class="md_list_sidebar_list111">
+                                <span class="md_list_label">
+                                  <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                    <input type="checkbox">
+                                    <span></span>
+                                  </label>10.00 X 14.00 cm / 3.94 X 5.51 inch
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+
+                          <li>
+                            <div class="list_sort_dropdown_li">
+                              <div class="md_list_sidebar_list111">
+                                <span class="md_list_label">
+                                  <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                    <input type="checkbox">
+                                    <span></span>
+                                  </label>10.00 X 14.00 cm / 3.94 X 5.51 inch
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+
+                          <li>
+                            <div class="list_sort_dropdown_li">
+                              <div class="md_list_sidebar_list111">
+                                <span class="md_list_label">
+                                  <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                    <input type="checkbox">
+                                    <span></span>
+                                  </label>10.00 X 14.00 cm / 3.94 X 5.51 inch
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+
+                          <li>
+                            <div class="list_sort_dropdown_li">
+                              <div class="md_list_sidebar_list111">
+                                <span class="md_list_label">
+                                  <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                    <input type="checkbox">
+                                    <span></span>
+                                  </label>10.00 X 14.00 cm / 3.94 X 5.51 inch
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+
+                          <li>
+                            <div class="list_sort_dropdown_li">
+                              <div class="md_list_sidebar_list111">
+                                <span class="md_list_label">
+                                  <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                    <input type="checkbox">
+                                    <span></span>
+                                  </label>10.00 X 14.00 cm / 3.94 X 5.51 inch
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+
+                          <li>
+                            <div class="list_sort_dropdown_li">
+                              <div class="md_list_sidebar_list111">
+                                <span class="md_list_label">
+                                  <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                    <input type="checkbox">
+                                    <span></span>
+                                  </label>10.00 X 14.00 cm / 3.94 X 5.51 inch
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+
+                          <li>
+                            <div class="list_sort_dropdown_li">
+                              <div class="md_list_sidebar_list111">
+                                <span class="md_list_label">
+                                  <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                    <input type="checkbox">
+                                    <span></span>
+                                  </label>10.00 X 14.00 cm / 3.94 X 5.51 inch
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+
+                          <li>
+                            <div class="list_sort_dropdown_li">
+                              <div class="md_list_sidebar_list111">
+                                <span class="md_list_label">
+                                  <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                    <input type="checkbox">
+                                    <span></span>
+                                  </label>10.00 X 14.00 cm / 3.94 X 5.51 inch
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+
+                          <li>
+                            <div class="list_sort_dropdown_li">
+                              <div class="md_list_sidebar_list111">
+                                <span class="md_list_label">
+                                  <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                    <input type="checkbox">
+                                    <span></span>
+                                  </label>10.00 X 14.00 cm / 3.94 X 5.51 inch
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+
+                          <li>
+                            <div class="list_sort_dropdown_li">
+                              <div class="md_list_sidebar_list111">
+                                <span class="md_list_label">
+                                  <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                    <input type="checkbox">
+                                    <span></span>
+                                  </label>10.00 X 14.00 cm / 3.94 X 5.51 inch
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+
+                          <li>
+                            <div class="list_sort_dropdown_li">
+                              <div class="md_list_sidebar_list111">
+                                <span class="md_list_label">
+                                  <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                    <input type="checkbox">
+                                    <span></span>
+                                  </label>10.00 X 14.00 cm / 3.94 X 5.51 inch
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+
+                          <li>
+                            <div class="list_sort_dropdown_li">
+                              <div class="md_list_sidebar_list111">
+                                <span class="md_list_label">
+                                  <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                    <input type="checkbox">
+                                    <span></span>
+                                  </label>10.00 X 14.00 cm / 3.94 X 5.51 inch
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+
                           <li>
                             <div class="list_sort_dropdown_li">
                               <div class="md_list_sidebar_list111">
@@ -977,6 +1432,7 @@
                               </div>
                             </div>
                           </li>
+
                           <li>
                             <div class="list_sort_dropdown_li">
                               <div class="md_list_sidebar_list111">
@@ -989,6 +1445,7 @@
                               </div>
                             </div>
                           </li>
+
                           <li>
                             <div class="list_sort_dropdown_li">
                               <div class="md_list_sidebar_list111">
@@ -1001,6 +1458,7 @@
                               </div>
                             </div>
                           </li>
+
                           <li>
                             <div class="list_sort_dropdown_li">
                               <div class="md_list_sidebar_list111">
@@ -1013,6 +1471,7 @@
                               </div>
                             </div>
                           </li>
+
                           <li>
                             <div class="list_sort_dropdown_li">
                               <div class="md_list_sidebar_list111">
@@ -1025,6 +1484,7 @@
                               </div>
                             </div>
                           </li>
+
                           <li>
                             <div class="list_sort_dropdown_li">
                               <div class="md_list_sidebar_list111">
@@ -1037,6 +1497,7 @@
                               </div>
                             </div>
                           </li>
+
                           <li>
                             <div class="list_sort_dropdown_li">
                               <div class="md_list_sidebar_list111">
@@ -1049,6 +1510,7 @@
                               </div>
                             </div>
                           </li>
+
                           <li>
                             <div class="list_sort_dropdown_li">
                               <div class="md_list_sidebar_list111">
@@ -1061,6 +1523,7 @@
                               </div>
                             </div>
                           </li>
+
                           <li>
                             <div class="list_sort_dropdown_li">
                               <div class="md_list_sidebar_list111">
@@ -1073,183 +1536,13 @@
                               </div>
                             </div>
                           </li>
-                        </li>
-                        <li>
-                          <div class="list_sort_dropdown_li">
-                            <div class="md_list_sidebar_list111">
-                              <span class="md_list_label">
-                                <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-                                  <input type="checkbox">
-                                  <span></span>
-                                </label>Sheetsize
-                              </span>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="list_sort_dropdown_li">
-                            <div class="md_list_sidebar_list111">
-                              <span class="md_list_label">
-                                <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-                                  <input type="checkbox">
-                                  <span></span>
-                                </label>Sheetsize
-                              </span>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="list_sort_dropdown_li">
-                            <div class="md_list_sidebar_list111">
-                              <span class="md_list_label">
-                                <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-                                  <input type="checkbox">
-                                  <span></span>
-                                </label>Sheetsize
-                              </span>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="list_sort_dropdown_li">
-                            <div class="md_list_sidebar_list111">
-                              <span class="md_list_label">
-                                <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-                                  <input type="checkbox">
-                                  <span></span>
-                                </label>Sheetsize
-                              </span>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="list_sort_dropdown_li">
-                            <div class="md_list_sidebar_list111">
-                              <span class="md_list_label">
-                                <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-                                  <input type="checkbox">
-                                  <span></span>
-                                </label>Sheetsize
-                              </span>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="list_sort_dropdown_li">
-                            <div class="md_list_sidebar_list111">
-                              <span class="md_list_label">
-                                <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-                                  <input type="checkbox">
-                                  <span></span>
-                                </label>Sheetsize
-                              </span>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="list_sort_dropdown_li">
-                            <div class="md_list_sidebar_list111">
-                              <span class="md_list_label">
-                                <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-                                  <input type="checkbox">
-                                  <span></span>
-                                </label>Sheetsize
-                              </span>
-                            </div>
-                          </div>
-                        </li>
-                      </li>
-                      <li>
-                        <div class="list_sort_dropdown_li">
-                          <div class="md_list_sidebar_list111">
-                            <span class="md_list_label">
-                              <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-                                <input type="checkbox">
-                                <span></span>
-                              </label>Sheetsize
-                            </span>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="list_sort_dropdown_li">
-                          <div class="md_list_sidebar_list111">
-                            <span class="md_list_label">
-                              <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-                                <input type="checkbox">
-                                <span></span>
-                              </label>Sheetsize
-                            </span>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="list_sort_dropdown_li">
-                          <div class="md_list_sidebar_list111">
-                            <span class="md_list_label">
-                              <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-                                <input type="checkbox">
-                                <span></span>
-                              </label>Sheetsize
-                            </span>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="list_sort_dropdown_li">
-                          <div class="md_list_sidebar_list111">
-                            <span class="md_list_label">
-                              <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-                                <input type="checkbox">
-                                <span></span>
-                              </label>Sheetsize
-                            </span>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="list_sort_dropdown_li">
-                          <div class="md_list_sidebar_list111">
-                            <span class="md_list_label">
-                              <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-                                <input type="checkbox">
-                                <span></span>
-                              </label>Sheetsize
-                            </span>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="list_sort_dropdown_li">
-                          <div class="md_list_sidebar_list111">
-                            <span class="md_list_label">
-                              <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-                                <input type="checkbox">
-                                <span></span>
-                              </label>Sheetsize
-                            </span>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="list_sort_dropdown_li">
-                          <div class="md_list_sidebar_list111">
-                            <span class="md_list_label">
-                              <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-                                <input type="checkbox">
-                                <span></span>
-                              </label>Sheetsize
-                            </span>
-                          </div>
-                        </div>
-                      </li>
 
 
                         </ul>
 
                         <button type="button" class="show-more-btn">
                           Show More
-                      </button>
+                        </button>
 
                       </div>
                     </div>
@@ -1267,101 +1560,109 @@
                           <li><a href="#">1 Color</a></li>
                           <li><a href="#">1 Color</a></li>
                           <li><a href="#">1 Color</a></li>
+                          <li><a href="#">1 Color</a></li>
+                          <li><a href="#">1 Color</a></li>
+                          <li><a href="#">1 Color</a></li>
+                          <li><a href="#">1 Color</a></li>
+                          <li><a href="#">1 Color</a></li>
+                          <li><a href="#">1 Color</a></li>
                         </ul>
                       </div>
                     </div>
-                    
-  
                   </div>
-  
-                 
                 </div>
               </div>
-
             </div>
 
             <div class="md_list_content_body">
               <div class="md_list_content_body_inner">
 
-                 <!-- LOADER -->
-        <div class="loaderBox_sec loaderBox_sec_listing d-none">
-          <div class="grey_loader">
-            <div class="grey_lev skeleton-box grey_lev1"></div>
-            <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
-            <div class="grey_lev skeleton-box grey_lev4"></div>
-            <div class="grey_lev skeleton-box grey_lev4 half_width"></div>
-            <div class="grey_lev skeleton-box grey_lev3"></div>
-            <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
-          </div>
-          <div class="grey_loader">
-            <div class="grey_lev skeleton-box grey_lev1"></div>
-            <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
-            <div class="grey_lev skeleton-box grey_lev4"></div>
-            <div class="grey_lev skeleton-box grey_lev4 half_width"></div>
-            <div class="grey_lev skeleton-box grey_lev3"></div>
-            <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
-          </div>
-          <div class="grey_loader">
-            <div class="grey_lev skeleton-box grey_lev1"></div>
-            <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
-            <div class="grey_lev skeleton-box grey_lev4"></div>
-            <div class="grey_lev skeleton-box grey_lev4 half_width"></div>
-            <div class="grey_lev skeleton-box grey_lev3"></div>
-            <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
-          </div>
-          <div class="grey_loader grey_loader_large">
-            <div class="grey_lev skeleton-box grey_lev1"></div>
-            <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
-            <div class="grey_lev skeleton-box grey_lev4"></div>
-            <div class="grey_lev skeleton-box grey_lev4 half_width"></div>
-            <div class="grey_lev skeleton-box grey_lev3"></div>
-            <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
-          </div>
-          <div class="grey_loader">
-            <div class="grey_lev skeleton-box grey_lev1 grey_loader_add"></div>
-          </div>
-          <div class="grey_loader">
-            <div class="grey_lev skeleton-box grey_lev1"></div>
-            <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
-            <div class="grey_lev skeleton-box grey_lev4"></div>
-            <div class="grey_lev skeleton-box grey_lev4 half_width"></div>
-            <div class="grey_lev skeleton-box grey_lev3"></div>
-            <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
-          </div>
-          <div class="grey_loader grey_loader_large">
-            <div class="grey_lev skeleton-box grey_lev1"></div>
-            <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
-            <div class="grey_lev skeleton-box grey_lev4"></div>
-            <div class="grey_lev skeleton-box grey_lev4 half_width"></div>
-            <div class="grey_lev skeleton-box grey_lev3"></div>
-            <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
-          </div>
-          <div class="grey_loader">
-            <div class="grey_lev skeleton-box grey_lev1"></div>
-            <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
-            <div class="grey_lev skeleton-box grey_lev4"></div>
-            <div class="grey_lev skeleton-box grey_lev4 half_width"></div>
-            <div class="grey_lev skeleton-box grey_lev3"></div>
-            <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
-          </div>
-          <div class="grey_loader">
-            <div class="grey_lev skeleton-box grey_lev1"></div>
-            <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
-            <div class="grey_lev skeleton-box grey_lev4"></div>
-            <div class="grey_lev skeleton-box grey_lev4 half_width"></div>
-            <div class="grey_lev skeleton-box grey_lev3"></div>
-            <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
-          </div>
-          <div class="grey_loader">
-            <div class="grey_lev skeleton-box grey_lev1"></div>
-            <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
-            <div class="grey_lev skeleton-box grey_lev4"></div>
-            <div class="grey_lev skeleton-box grey_lev4 half_width"></div>
-            <div class="grey_lev skeleton-box grey_lev3"></div>
-            <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
-          </div>
-        </div>
+                <!-- LOADER -->
+                <div class="loaderBox_sec loaderBox_sec_listing d-none">
+                  <div class="grey_loader">
+                    <div class="grey_lev skeleton-box grey_lev1"></div>
+                    <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
+                    <div class="grey_lev skeleton-box grey_lev4"></div>
+                    <div class="grey_lev skeleton-box grey_lev4 half_width"></div>
+                    <div class="grey_lev skeleton-box grey_lev3"></div>
+                    <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
+                  </div>
 
+                  <div class="grey_loader">
+                    <div class="grey_lev skeleton-box grey_lev1"></div>
+                    <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
+                    <div class="grey_lev skeleton-box grey_lev4"></div>
+                    <div class="grey_lev skeleton-box grey_lev4 half_width"></div>
+                    <div class="grey_lev skeleton-box grey_lev3"></div>
+                    <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
+                  </div>
+
+                  <div class="grey_loader">
+                    <div class="grey_lev skeleton-box grey_lev1"></div>
+                    <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
+                    <div class="grey_lev skeleton-box grey_lev4"></div>
+                    <div class="grey_lev skeleton-box grey_lev4 half_width"></div>
+                    <div class="grey_lev skeleton-box grey_lev3"></div>
+                    <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
+                  </div>
+
+                  <div class="grey_loader grey_loader_large">
+                    <div class="grey_lev skeleton-box grey_lev1"></div>
+                    <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
+                    <div class="grey_lev skeleton-box grey_lev4"></div>
+                    <div class="grey_lev skeleton-box grey_lev4 half_width"></div>
+                    <div class="grey_lev skeleton-box grey_lev3"></div>
+                    <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
+                  </div>
+
+                  <div class="grey_loader">
+                    <div class="grey_lev skeleton-box grey_lev1 grey_loader_add"></div>
+                  </div>
+                  <div class="grey_loader">
+                    <div class="grey_lev skeleton-box grey_lev1"></div>
+                    <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
+                    <div class="grey_lev skeleton-box grey_lev4"></div>
+                    <div class="grey_lev skeleton-box grey_lev4 half_width"></div>
+                    <div class="grey_lev skeleton-box grey_lev3"></div>
+                    <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
+                  </div>
+
+                  <div class="grey_loader grey_loader_large">
+                    <div class="grey_lev skeleton-box grey_lev1"></div>
+                    <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
+                    <div class="grey_lev skeleton-box grey_lev4"></div>
+                    <div class="grey_lev skeleton-box grey_lev4 half_width"></div>
+                    <div class="grey_lev skeleton-box grey_lev3"></div>
+                    <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
+                  </div>
+
+                  <div class="grey_loader">
+                    <div class="grey_lev skeleton-box grey_lev1"></div>
+                    <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
+                    <div class="grey_lev skeleton-box grey_lev4"></div>
+                    <div class="grey_lev skeleton-box grey_lev4 half_width"></div>
+                    <div class="grey_lev skeleton-box grey_lev3"></div>
+                    <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
+                  </div>
+
+                  <div class="grey_loader">
+                    <div class="grey_lev skeleton-box grey_lev1"></div>
+                    <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
+                    <div class="grey_lev skeleton-box grey_lev4"></div>
+                    <div class="grey_lev skeleton-box grey_lev4 half_width"></div>
+                    <div class="grey_lev skeleton-box grey_lev3"></div>
+                    <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
+                  </div>
+
+                  <div class="grey_loader">
+                    <div class="grey_lev skeleton-box grey_lev1"></div>
+                    <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
+                    <div class="grey_lev skeleton-box grey_lev4"></div>
+                    <div class="grey_lev skeleton-box grey_lev4 half_width"></div>
+                    <div class="grey_lev skeleton-box grey_lev3"></div>
+                    <div class="grey_lev skeleton-box grey_lev4 full_width"></div>
+                  </div>
+                </div>
 
                 <div class="listings-grid_new">
                   <!-- CARD 1 -->
@@ -1383,14 +1684,14 @@
                           <img src="images/fav-filled.svg" alt="favourite">
                         </span>
                       </button>
+                      <span class="listing-title_main">Heidelberg</span>
                     </div>
                     <div class="listing-body">
                       <h3 class="listing-title">
-                        Heidelberg 75-7+LX -F-Size UV
+                         <span class="listing-title_dtl">75-7+LX -F-Size UV</span> 
                       </h3>
                       <div class="listing_flex">
                         <p class="listing_flex_meta">
-
                           <span class="header_menu_ico card-ico">
                             <img src="images/bookmark.svg" alt="bookmark">
                           </span>
@@ -1418,12 +1719,12 @@
                       <div class="seller-pric-req">
                         <img src="images/payments.svg" alt="payment">
                         <p class="req-price">
-                          Request Price
+                          Price On Request
                         </p>
                       </div>
-                      <div class="listing-meta_btn">
+                      <button type="button" class="listing-meta_btn" aria-label="View specs for Heidelberg 75-7+LX F-Size UV, 2004, Chicago IL">
                         <span> View Specs</span>
-                      </div>
+                      </button>
                     </div>
                   </a>
                   <a href="list-detail.html" class="listing-card fade-up">
@@ -1444,10 +1745,11 @@
                           <img src="images/fav-filled.svg" alt="favourite">
                         </span>
                       </button>
+                      <span class="listing-title_main">Heidelberg</span>
                     </div>
                     <div class="listing-body">
                       <h3 class="listing-title">
-                        Heidelberg 75-7+LX -F-Size UV
+                       75-7+LX -F-Size UV
                       </h3>
                       <div class="listing_flex">
                         <p class="listing_flex_meta">
@@ -1481,9 +1783,9 @@
                           $ 68,000
                         </p>
                       </div>
-                      <div class="listing-meta_btn">
+                      <button type="button" class="listing-meta_btn" aria-label="View specs for Heidelberg 75-7+LX F-Size UV, 2004, Chicago IL">
                         <span> View Specs</span>
-                      </div>
+                      </button>
                     </div>
                   </a>
                   <a href="list-detail.html" class="listing-card fade-up">
@@ -1504,10 +1806,11 @@
                           <img src="images/fav-filled.svg" alt="favourite">
                         </span>
                       </button>
+                      <span class="listing-title_main">Heidelberg</span>
                     </div>
                     <div class="listing-body">
                       <h3 class="listing-title">
-                        Heidelberg 75-7+LX -F-Size UV
+                        75-7+LX -F-Size UV
                       </h3>
                       <div class="listing_flex">
                         <p class="listing_flex_meta">
@@ -1541,9 +1844,9 @@
                           $ 68,000
                         </p>
                       </div>
-                      <div class="listing-meta_btn">
+                      <button type="button" class="listing-meta_btn" aria-label="View specs for Heidelberg 75-7+LX F-Size UV, 2004, Chicago IL">
                         <span> View Specs</span>
-                      </div>
+                      </button>
                     </div>
                   </a>
                   <a href="list-detail.html" class="listing-card listing-card-new_mach fade-up">
@@ -1598,10 +1901,11 @@
                           <img src="images/fav-filled.svg" alt="favourite">
                         </span>
                       </button>
+                      <span class="listing-title_main">Heidelberg</span>
                     </div>
                     <div class="listing-body">
                       <h3 class="listing-title">
-                        Heidelberg 75-7+LX -F-Size UV
+                        75-7+LX -F-Size UV
                       </h3>
                       <div class="listing_flex">
                         <p class="listing_flex_meta">
@@ -1633,12 +1937,12 @@
                       <div class="seller-pric-req">
                         <img src="images/payments.svg" alt="payment">
                         <p class="req-price">
-                          Request Price
+                          Price On Request
                         </p>
                       </div>
-                      <div class="listing-meta_btn">
+                      <button type="button" class="listing-meta_btn" aria-label="View specs for Heidelberg 75-7+LX F-Size UV, 2004, Chicago IL">
                         <span> View Specs</span>
-                      </div>
+                      </button>
                     </div>
                   </a>
 
@@ -1678,10 +1982,11 @@
                           <img src="images/fav-filled.svg" alt="favourite">
                         </span>
                       </button>
+                      <span class="listing-title_main">Heidelberg</span>
                     </div>
                     <div class="listing-body">
                       <h3 class="listing-title">
-                        Heidelberg 75-7+LX -F-Size UV
+                        75-7+LX -F-Size UV
                       </h3>
                       <div class="listing_flex">
                         <p class="listing_flex_meta">
@@ -1715,9 +2020,9 @@
                           $ 68,000
                         </p>
                       </div>
-                      <div class="listing-meta_btn">
+                      <button type="button" class="listing-meta_btn" aria-label="View specs for Heidelberg 75-7+LX F-Size UV, 2004, Chicago IL">
                         <span> View Specs</span>
-                      </div>
+                      </button>
                     </div>
                   </a>
                   <a href="list-detail.html" class="listing-card fade-up">
@@ -1738,10 +2043,11 @@
                           <img src="images/fav-filled.svg" alt="favourite">
                         </span>
                       </button>
+                      <span class="listing-title_main">Heidelberg</span>
                     </div>
                     <div class="listing-body">
                       <h3 class="listing-title">
-                        Heidelberg 75-7+LX -F-Size UV
+                        75-7+LX -F-Size UV
                       </h3>
                       <div class="listing_flex">
                         <p class="listing_flex_meta">
@@ -1775,9 +2081,9 @@
                           $ 68,000
                         </p>
                       </div>
-                      <div class="listing-meta_btn">
+                      <button type="button" class="listing-meta_btn" aria-label="View specs for Heidelberg 75-7+LX F-Size UV, 2004, Chicago IL">
                         <span> View Specs</span>
-                      </div>
+                      </button>
                     </div>
                   </a>
                   <a href="list-detail.html" class="listing-card fade-up">
@@ -1798,10 +2104,11 @@
                           <img src="images/fav-filled.svg" alt="favourite">
                         </span>
                       </button>
+                      <span class="listing-title_main">Heidelberg</span>
                     </div>
                     <div class="listing-body">
                       <h3 class="listing-title">
-                        Heidelberg 75-7+LX -F-Size UV
+                        75-7+LX -F-Size UV
                       </h3>
                       <div class="listing_flex">
                         <p class="listing_flex_meta">
@@ -1833,12 +2140,12 @@
                       <div class="seller-pric-req">
                         <img src="images/payments.svg" alt="payment">
                         <p class="req-price">
-                          Request Price
+                          Price On Request
                         </p>
                       </div>
-                      <div class="listing-meta_btn">
+                      <button type="button" class="listing-meta_btn" aria-label="View specs for Heidelberg 75-7+LX F-Size UV, 2004, Chicago IL">
                         <span> View Specs</span>
-                      </div>
+                      </button>
                     </div>
                   </a>
 
@@ -1877,23 +2184,42 @@
       </div>
     </section>
 
+    <!--============ Post Your Requirement START ============-->
+   <section class="post_requirement_sec">
+      <div class="container">
+        <div class="post_requirement_subsec">
+          <div class="post_requirement_subsec_left">
+            <h3>Can’t find the right machine? </h3>
+            <p>Post your requirements and get offers from verified dealers and sellers across the platform.</p>
+          </div>
+          <div class="post_requirement_subsec_right">
+            <button type="button" class="blu_btn" onclick="window.location.href = 'post-your-requirement.html';">
+              Post your Requirement
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--============ Post Your Requirement END ============-->
+
     <!--============ Global Sell START ============-->
     <section class="global_sell_sec">
       <div class="container">
         <div class="global_sell_subsec">
           <div class="global_sell_subsec_1">
-            <h3>Start Selling Globally Today</h3>
-            <p>Join thousands of manufacturers and dealers reaching millions of buyers.
-              We provide the tools to build your store, manage inventory, and secure
-              payments.</p>
+            <h3>Start Selling to the Global Print Industry </h3>
+            <p>List your machinery on Machine Dalal and connect with verified buyers, dealers, printers, and converters from around the world. Manage your listings, receive enquiries, and grow your business through the industry's leading marketplace. </p>
+
+            <p class="global_sell_subsec_1_txt">Business Unlimited Plan — $99/year </p>
+
           </div>
           <div class="global_sell_subsec_2">
             <button type="button" class="list_mac_btn" onclick="window.location.href = 'list-on-machine-dalal.html';">
-              Become a Seller
+              View Details
             </button>
-            <button type="button" class="list_mac_btn strok_btn" onclick="window.location.href = 'seller-store.html';">
+            <!-- <button type="button" class="list_mac_btn strok_btn" onclick="window.location.href = 'seller-store.html';">
               Create Store
-            </button>
+            </button> -->
           </div>
         </div>
       </div>
@@ -1904,19 +2230,28 @@
       <div class="container">
         <div class="newsletrBox">
           <div class="newsletrBox1">
-            <h3>Get all the <span class="yellow_txt">Industry Insights</span> and Deals</h3>
-            <p>Subscribe to our newsletter now</p>
+            <!-- <h3>Get all the <span class="yellow_txt">Industry Insights</span> and Deals</h3> -->
+             <h3>Get Industry <span class="yellow_txt">Insights & Deals</span></h3>
+            <p>Subscribe to our newsletter for the latest machinery listings, insights, and exclusive deals</p>
           </div>
           <div class="newsletrBox2 errorMsg">
             <div class="search-wrap mb-0">
               <div class="search-row">
                 <div class="search-input-wrap">
                   <input class="search-input" type="text" placeholder="Email" autocomplete="off">
+                  <span class="search_close">
+                    <img src="images/close.svg" alt="close">
+                  </span>
+                  <span class="material-symbols-outlined error_ico">
+                    error
+                  </span>
                 </div>
-                <button class="search-btn"><i class="material-symbols-outlined">send</i></button>
+                <button class="search-btn">
+                  <span class="material-symbols-outlined">send</span>
+                </button>
               </div>
             </div>
-            <span class="errorMsg_p" id="email_login_error" style="display: block;">Please enter your Email.</span>
+            <span class="errorMsg_p" id="email_login_error" style="display: block;">Please enter your Email Address.</span>
           </div>
         </div>
       </div>
@@ -1935,22 +2270,16 @@
             <a href="#"><img src="images/md-logo-new.svg" alt="logo"></a>
             <p>The world's most trusted global marketplace for industrial machinery. Connecting buyers and sellers in
               140+ countries since 2008.</p>
-            <!-- <div class="footer-flags">
-              <span class="flag">🇩🇪</span><span class="flag">🇬🇧</span><span class="flag">🇮🇳</span><span
-                class="flag">🇺🇸</span><span class="flag">🇦🇪</span><span class="flag">🇧🇷</span><span
-                class="flag">🇯🇵</span>
-              <span class="flag_txt">+133 more</span>
-            </div> -->
           </div>
           <div class="footer-col">
             <h4>Company</h4>
             <ul>
               <li><a href="about.html">About</a></li>
-              <li><a href="#">Contact Us</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
               <li><a href="#">Magazine</a></li>
               <li><a href="blog.html">Blog</a></li>
               <li><a href="#">Gallery</a></li>
-              <li><a href="#">Imprint</a></li>
+              <li><a href="imprint.html">Imprint</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -1958,11 +2287,11 @@
             <ul>
               <li><a href="#">Plans & Pricing</a></li>
               <li><a href="#">Invest</a></li>
-              <li><a href="#">Post Your Requirements</a></li>
-              <li><a href="#">Sell Your Equipment</a></li>
-              <li><a href="#">Newsletter</a></li>
-              <li><a href="#">Advertisement</a></li>
-              <li><a href="#">FAQs</a></li>
+              <li><a href="post-your-requirement.html">Post Your Requirements</a></li>
+              <li><a href="sell-your-equipment.html">Sell Your Equipment</a></li>
+              <li><a href="newsletter.html">Newsletter</a></li>
+              <li><a href="advertisement.html">Advertisement</a></li>
+              <li><a href="frequent-ask-questions.html">FAQs</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -2109,8 +2438,8 @@
 
           $('.header_menu_new').removeClass('active');
 
-          $('.header_mach_subtxt li a').removeClass('active_head');
-          $('.header_mach_subtxt li .arrow_icon').removeClass('active_head');
+          // $('.header_mach_subtxt li a').removeClass('active_head');
+          $('.header_mach_subtxt li .products').removeClass('active_head');
 
           // $('.header_menu_content').removeClass('active_menu');
         }
@@ -2157,26 +2486,20 @@
   <script>
     $('.list_sort_click').on('click', function (e) {
       e.stopPropagation();
-
       let currentDropdown = $(this).siblings('.list_sort_dropdown');
-
-      // Close all other dropdowns
       $('.list_sort_dropdown').not(currentDropdown).hide();
-
-      // Toggle current dropdown
       currentDropdown.toggle();
     });
 
-    // Close on outside click
     $(document).on('click', function () {
       $('.list_sort_dropdown').hide();
     });
 
-    // Prevent closing when clicking inside dropdown
     $('.list_sort_dropdown').on('click', function (e) {
       e.stopPropagation();
     });
   </script>
+  
   <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
   <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoicmV0aW5hYWQiLCJhIjoiY20wNmt6anUwMG81NDJyczRoOW0zdmZjbyJ9.xJOw8JwObQUAneO2SmCNqw';
@@ -2213,41 +2536,80 @@
     });
   </script>
 
-<!--=============== Sheetsize Scroll START ===============-->
-<script>
-  $('.list_sort_dropdown').each(function () {
+  <!--=============== Sheetsize Scroll START ===============-->
+  <script>
+    $('.list_sort_dropdown').each(function () {
 
-    var $list = $(this).find('.list_sort_dropdown_inner');
-    var $btn = $(this).find('.show-more-btn');
+      var $list = $(this).find('.list_sort_dropdown_inner');
+      var $btn = $(this).find('.show-more-btn');
 
-  });
-
-  $('.show-more-btn').on('click', function () {
-
-var $list = $(this).siblings('.list_sort_dropdown_inner');
-
-if ($list.hasClass('expanded')) {
-
-    // Scroll back to top smoothly
-    $list.animate({
-        scrollTop: 0
-    }, 300, function () {
-
-        $list.removeClass('expanded');
     });
 
-    $(this).text('Show More');
+    $('.show-more-btn').on('click', function () {
 
-} else {
+      var $list = $(this).siblings('.list_sort_dropdown_inner');
 
-    $list.addClass('expanded');
-    $(this).text('Show Less');
+      if ($list.hasClass('expanded')) {
 
-}
+        // Scroll back to top smoothly
+        $list.animate({
+          scrollTop: 0
+        }, 300, function () {
+
+          $list.removeClass('expanded');
+        });
+
+        $(this).text('Show More');
+
+      } else {
+
+        $list.addClass('expanded');
+        $(this).text('Show Less');
+
+      }
+
+    });
+  </script>
+  <!--=============== Sheetsize Scroll END ===============-->
+
+  <script>
+   $(function () {
+
+$('.md_list_sidebar_list11').each(function () {
+
+    const $wrapper = $(this);
+    const $list = $wrapper.find('.md_sidebar_filter_Sec');
+    const $btn = $wrapper.find('.show-more-btn_2');
+
+    function updateButton() {
+        if ($list[0].scrollHeight > $list[0].clientHeight + 1) {
+            $btn.addClass('show-btn');
+        } else {
+            $btn.removeClass('show-btn');
+        }
+    }
+
+    updateButton();
+
+    $(window).on('resize', updateButton);
+
+    $btn.on('click', function () {
+
+        $list.toggleClass('expanded_1');
+
+        $(this).text(
+            $list.hasClass('expanded_1')
+                ? 'Show Less'
+                : 'Show More'
+        );
+
+        setTimeout(updateButton, 0);
+    });
 
 });
-</script>
-<!--=============== Sheetsize Scroll END ===============-->
+
+});
+  </script>
 
 </body>
 
